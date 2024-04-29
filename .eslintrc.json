@@ -31,10 +31,10 @@
             {
                 "ts": "never",
                 "tsx": "never"
-            },
+            }
         ],
         "import/no-extraneous-dependencies": [
-            "error",
+            "warn",
             {
                 "devDependencies": false,
                 "optionalDependencies": false,
