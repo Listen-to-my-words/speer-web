@@ -1,20 +1,18 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import './App.css' // eslint-disable-next-line
+import { Route, Routes } from 'react-router-dom'
+import Hello from './components/Hello'
+import Root from './pages/Root'
+import SignIn from './pages/SignIn'
 
 function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a className='App-link' href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path={'/'} element={<Root />} />
+      <Route path={'/hello'} element={<Hello />} />
+      <Route path={'/signIn'} element={<SignIn />} />
+      <Route path={'*'} element={<h1>404</h1>} />
+    </Routes>
   )
 }
 
