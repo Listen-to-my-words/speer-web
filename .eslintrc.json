@@ -34,7 +34,7 @@
             }
         ],
         "import/no-extraneous-dependencies": [
-            "warn",
+            "error",
             {
                 "devDependencies": false,
                 "optionalDependencies": false,

@@ -1,5 +1,5 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp, getApp } from 'firebase/app'
+// eslint-disable-next-line
+import { initializeApp, getApp } from 'firebase/app' // eslint-disable-next-line
 import 'firebase/auth'
 
 // eslint-disable-next-line
