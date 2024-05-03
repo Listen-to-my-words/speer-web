@@ -1,8 +1,7 @@
 import React from 'react'
-import Nav from '../components/Nav'
 
 const Root = () => {
-  return <Nav />
+  return <>root</>
 }
 
 export default Root
