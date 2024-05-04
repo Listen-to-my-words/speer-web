@@ -20,15 +20,14 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "allowImportingTsExtensions": true,
-    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ]
     }
   },
   "include": [
-    "src",
-    "src/api/fbInstance.js"
+    "**/*.ts",
+    "**/*.tsx",
   ]
 }

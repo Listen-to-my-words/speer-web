@@ -4,9 +4,10 @@
         "es2021": true
     },
     "extends": [
-        "prettier",
-        "airbnb-base",
+        "eslint:recommended",
+        "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
+        "airbnb",
         "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
@@ -17,8 +18,7 @@
         "createDefaultProgram": true,
         "ecmaFeatures": {
             "jsx": true
-        },
-        "jsx": "react" // Added line
+        }
     },
     "plugins": [
         "@typescript-eslint",
@@ -29,14 +29,23 @@
         "no-unused-vars": "warn",
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-explicit-any": "warn",
+        "react/require-default-props": "off",
         "import/extensions": [
             "error",
             "ignorePackages",
             {
                 "js": "never",
                 "jsx": "never",
-                // "ts": "never",
+                "ts": "never",
                 "tsx": "never"
+            }
+        ],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".tsx"
+                ]
             }
         ],
         "import/no-extraneous-dependencies": [
@@ -47,18 +56,34 @@
                 "peerDependencies": true,
                 "bundledDependencies": true
             }
+        ],
+        "react/function-component-definition": [
+            2,
+            {
+                "namedComponents": [
+                    "arrow-function",
+                    "function-declaration"
+                ]
+            }
+        ],
+        "react/jsx-curly-brace-presence": [
+            "error",
+            {
+                "props": "always",
+                "children": "ignore"
+            }
         ]
     },
     "settings": {
         "import/resolver": {
             "node": {
                 "paths": [
-                    "src"
+                    "./src"
                 ],
                 "extensions": [
                     ".js",
-                    ".ts",
                     ".jsx",
+                    ".ts",
                     ".tsx"
                 ]
             }

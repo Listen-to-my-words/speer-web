@@ -6,8 +6,8 @@ import Root from './pages/Root'
 function App() {
   return (
     <Routes>
-      <Route path={'/'} element={<Root />} />
-      <Route path={'*'} element={<h1>404</h1>} />
+      <Route path='/' element={<Root />} />
+      <Route path='*' element={<h1>404</h1>} />
     </Routes>
   )
 }
