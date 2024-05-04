@@ -24,17 +24,25 @@ if (firebase.apps.length === 0) {
 
 const auth = firebase.auth()
 
-type AuthState = {
+interface IProfile {
+  email?: string
+  locale?: string
+  photoURL?: string
+  displayName?: string
+}
+
+type TAuthState = {
   token: firebase.auth.AuthCredential | null
   signIn: () => void
-  user: any
   app: firebase.app.App
   auth: firebase.auth.Auth
   firebase: typeof firebase
-  profile: any
+  refreshProfile: () => void
+  profile: IProfile | null
+  isLoggedIn: boolean
 }
 
-const useAuth = create<AuthState>((set) => {
+const useAuth = create<TAuthState>((set) => {
   const signIn = async () => {
     const provider = await new firebase.auth.GoogleAuthProvider()
 
@@ -63,14 +71,38 @@ const useAuth = create<AuthState>((set) => {
       })
   }
 
+  // 두 가지 일을 하기 때문에 별로인 코드. 리펙토링 요구됨
+  const refreshProfile = () => {
+    const user = firebase.auth().currentUser
+    if (user !== null) {
+      set((prev) => ({
+        ...prev,
+        isLoggedIn: true,
+        profile: {
+          displayName: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+          locale: prev.profile?.locale
+        }
+      }))
+    } else {
+      set((prev) => ({
+        ...prev,
+        isLoggedIn: false,
+        profile: null
+      }))
+    }
+  }
+
   return {
     token: null,
-    user: null,
     app,
     auth,
     signIn,
     firebase,
-    profile: null
+    profile: null,
+    isLoggedIn: false,
+    refreshProfile
   }
 })
 
