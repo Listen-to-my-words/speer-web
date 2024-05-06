@@ -11,6 +11,7 @@ const Logo = () => {
       width={'8rem'}
       height={'8rem'}
       onClick={() => navigate('/')}
+      sx={{ mb: '2rem !important' }}
     />
   )
 }
