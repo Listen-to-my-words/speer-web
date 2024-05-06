@@ -3,6 +3,7 @@ import { Stack, Typography } from '@mui/material'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import RootLayout from '../layouts/RootLayout'
+import DialogBox from '../components/DialogBox'
 
 const Game = () => {
   return (
@@ -15,6 +16,7 @@ const Game = () => {
         </Stack>
         <KeyboardArrowRightIcon />
       </Stack>
+      <DialogBox />
     </RootLayout>
   )
 }
