@@ -6,7 +6,13 @@ import DialogBackground from './DialogBackground'
 
 const DialogBox = () => {
   return (
-    <Box sx={{ ...style.dialogBoxStyle, position: 'relative' }}>
+    <Box
+      sx={{
+        ...style.dialogBoxStyle,
+        position: 'relative',
+        boxShadow: '0px 4px 4px 0px #B0B0B040'
+      }}
+    >
       <DialogBackground />
       <Dialog />
     </Box>

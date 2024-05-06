@@ -16,11 +16,11 @@ export const dialogBoxStyle: SxProps = {
 export const dialogStyle: SxProps = {
   backgroundColor: 'white',
   width: '100%',
-  height: 'calc((100vw - 3rem) / 9)',
+  height: ['3.5rem', 'calc((100vw - 3rem) / 9)'],
   maxHeight: '23rem',
   position: 'absolute',
   bottom: 0,
-  border: '1px solid lightgray',
+  border: '1px solid lightgrey',
   borderRadius: '0.75rem',
   zIndex: 100,
   p: '1rem',
