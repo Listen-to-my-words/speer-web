@@ -3,7 +3,7 @@ import { SxProps } from '@mui/system'
 export const dialogBoxSizeStyle: SxProps = {
   width: '100%',
   maxWidth: '53.25rem',
-  height: 'calc((100vw - 3rem) / 9 * 4)',
+  height: ['45rem', 'calc((100vw - 3rem) / 9 * 4)'],
   maxHeight: '23rem',
   borderRadius: '0.75rem'
 }
@@ -16,7 +16,7 @@ export const dialogBoxStyle: SxProps = {
 export const dialogStyle: SxProps = {
   backgroundColor: 'white',
   width: '100%',
-  height: ['3.5rem', 'calc((100vw - 3rem) / 9)'],
+  height: ['5rem', 'calc((100vw - 3rem) / 9)'],
   maxHeight: '23rem',
   position: 'absolute',
   bottom: 0,
@@ -35,6 +35,8 @@ export const arrowStyle: SxProps = {
 }
 
 export const dialogTextStyle: SxProps = {
-  mx: '2rem',
-  my: '1rem'
+  mx: [0, '2rem'],
+  my: [0, 0, '1rem'],
+  fontSize: ['0.75rem', '0.75rem', '1rem'],
+  transition: 'all 0.3s'
 }
