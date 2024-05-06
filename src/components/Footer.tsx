@@ -11,9 +11,10 @@ const Footer = () => {
         bgcolor: 'lightgray',
         height: ['2rem', '8rem'],
         width: '100vw',
-        justifySelf: 'flex-end',
         left: 0,
-        mt: '10rem'
+        // mt: '10rem',
+        position: 'relative'
+        // transform: 'translateY(-100%)'
       }}
     >
       <Typography variant={'subtitle2'}>{'서울여자대학교 바롬 2팀 알아서 잘하조'}</Typography>

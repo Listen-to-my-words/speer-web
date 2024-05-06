@@ -1,0 +1,6 @@
+@import "./reset.css";
+
+
+body::-webkit-scrollbar {
+    display: none;
+}

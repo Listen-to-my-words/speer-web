@@ -72,7 +72,8 @@
                 "props": "always",
                 "children": "ignore"
             }
-        ]
+        ],
+        "import/no-unresolved": "off"
     },
     "settings": {
         "import/resolver": {
