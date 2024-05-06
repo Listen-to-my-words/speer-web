@@ -14,10 +14,10 @@ const Level = ({ level }: { level: ILevel }) => {
     setAnchorEl(null)
   }
 
-  const navigater = useNavigate()
+  const navigator = useNavigate()
 
   const handleLevelClick = (week: number, subLevel: number) => {
-    return () => navigater(`/game/${week}/${subLevel}`)
+    return () => navigator(`/game/${week}/${subLevel}`)
   }
 
   return (
@@ -37,6 +37,7 @@ const Level = ({ level }: { level: ILevel }) => {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         id={`week${level.week}-levels-button`}
+        disabled={level.week !== 1}
       >
         <Box
           sx={{

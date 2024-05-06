@@ -2,6 +2,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Box, Typography } from '
 import Grid from '@mui/material/Unstable_Grid2'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import React from 'react'
+import { ILevel } from '../../../types/ILevels'
 
 export const SubLevel = ({ subLevelTitle }: { subLevelTitle: string }) => {
   return (
@@ -11,7 +12,7 @@ export const SubLevel = ({ subLevelTitle }: { subLevelTitle: string }) => {
   )
 }
 
-const Level = () => {
+const Level = ({ level }: { level: ILevel }) => {
   return (
     <Accordion
       sx={{
@@ -38,7 +39,7 @@ const Level = () => {
           </Grid>
           <Grid xs={5}>
             <Typography variant={'subtitle2'} textAlign={'center'} width={'100%'}>
-              {'< 1주차 > - 성장이의 입학'}
+              {`<${level.week}주차> ${level.title}`}
             </Typography>
           </Grid>
           <Grid xs={5}>
@@ -52,9 +53,9 @@ const Level = () => {
         <Grid container justifyContent={'space-between'} alignItems={'flex-start'} width={1}>
           <Grid xs={2} sx={{ width: 'fit-content', height: 'fit-content' }} />
           <Grid xs={5}>
-            <SubLevel subLevelTitle={'자기소개하기'} />
-            <SubLevel subLevelTitle={'자기소개하기'} />
-            <SubLevel subLevelTitle={'자기소개하기'} />
+            {level.subLevels.map((subLevel) => (
+              <SubLevel key={subLevel.title} subLevelTitle={subLevel.title} />
+            ))}
           </Grid>
           <Grid xs={5} />
         </Grid>
