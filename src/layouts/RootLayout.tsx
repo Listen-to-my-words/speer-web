@@ -7,7 +7,13 @@ import Footer from '../components/Footer'
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <Container maxWidth={'md'}>
+      <Container
+        maxWidth={'md'}
+        sx={{
+          pb: ['2rem', '8rem'],
+          minHeight: '100vh'
+        }}
+      >
         <Stack spacing={2}>
           <Nav />
           <Logo />
