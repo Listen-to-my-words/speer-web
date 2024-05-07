@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, Stack, Typography, Button, Paper } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { ILevel } from '../types/ILevels'
 import useModal from '../hooks/useModal'
 
@@ -11,6 +12,26 @@ const Level = ({ level }: { level: ILevel }) => {
 
   const handleLevelClick = (week: number, subLevel: number) => {
     return () => navigator(`/game/${week}/${subLevel}`)
+  }
+
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
   }
 
   return (
@@ -62,7 +83,7 @@ const Level = ({ level }: { level: ILevel }) => {
           }}
           elevation={0}
         >
-          <Grid container width={1}>
+          <Grid container width={1} component={motion.div} variants={container} initial={'hidden'} animate={'visible'}>
             {level.subLevels.map((subLevel) => (
               <Grid
                 xs={6}
@@ -72,6 +93,8 @@ const Level = ({ level }: { level: ILevel }) => {
                   maxHeight: '15rem',
                   padding: '0.5rem'
                 }}
+                component={motion.div}
+                variants={item}
               >
                 <Button
                   sx={{
