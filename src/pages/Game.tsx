@@ -15,7 +15,7 @@ const Game = () => {
     <RootLayout>
       <Stack spacing={4}>
         <Subtitle week={Number(week)} currLevel={Number(currLevel)} />
-        <DialogBox />
+        <DialogBox week={Number(week)} level={Number(currLevel)} />
         <NavButtons />
         <Typography variant={'h6'}>목록</Typography>
         <Stack spacing={4}>
