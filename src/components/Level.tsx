@@ -1,19 +1,12 @@
 import React from 'react'
-import { Box, Stack, Typography, Button, Menu, MenuItem, Paper } from '@mui/material'
+import { Box, Stack, Typography, Button, Paper } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import { useNavigate } from 'react-router-dom'
 import { ILevel } from '../types/ILevels'
+import useModal from '../hooks/useModal'
 
 const Level = ({ level }: { level: ILevel }) => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
-  const open = Boolean(anchorEl)
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
+  const { Modal, isOpen, openModal, closeModal } = useModal()
   const navigator = useNavigate()
 
   const handleLevelClick = (week: number, subLevel: number) => {
@@ -32,11 +25,7 @@ const Level = ({ level }: { level: ILevel }) => {
           p: 0,
           color: 'black'
         }}
-        aria-controls={open ? `week${level.week}-levels` : undefined}
-        aria-haspopup={'true'}
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-        id={`week${level.week}-levels-button`}
+        onClick={openModal}
         disabled={level.week !== 1}
       >
         <Box
@@ -59,25 +48,17 @@ const Level = ({ level }: { level: ILevel }) => {
           {`<${level.week}주차> ${level.title}`}
         </Typography>
       </Button>
-      <Menu
-        id={`week${level.week}-levels`}
-        aria-labelledby={`week${level.week}-levels-button`}
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: 'center',
-          horizontal: 'center'
-        }}
-        transformOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left'
-        }}
-      >
+      <Modal open={isOpen} onClose={closeModal} sx={{}}>
         <Paper
           sx={{
-            width: 'calc((100vw - 3rem) / 4)',
-            height: 'calc((100vw - 3rem) / 4)'
+            width: 'calc((100vw - 3rem))',
+            height: 'calc((100vw - 3rem))',
+            maxWidth: '30rem',
+            maxHeight: '30rem',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)'
           }}
           elevation={0}
         >
@@ -87,12 +68,12 @@ const Level = ({ level }: { level: ILevel }) => {
                 xs={6}
                 key={subLevel.level}
                 sx={{
-                  height: 'calc((100vw - 3rem) / 8)',
+                  height: 'calc((100vw - 3rem) / 2)',
+                  maxHeight: '15rem',
                   padding: '0.5rem'
                 }}
-                onClick={handleLevelClick(level.week, subLevel.level)}
               >
-                <MenuItem
+                <Button
                   sx={{
                     backgroundColor: 'lightgray',
                     borderRadius: '0.5rem',
@@ -100,14 +81,15 @@ const Level = ({ level }: { level: ILevel }) => {
                     height: '100%',
                     p: 0
                   }}
+                  onClick={handleLevelClick(level.week, subLevel.level)}
                 >
                   <Typography variant={'subtitle2'} align={'center'} width={1}>{`${subLevel.title}`}</Typography>
-                </MenuItem>
+                </Button>
               </Grid>
             ))}
           </Grid>
         </Paper>
-      </Menu>
+      </Modal>
     </>
   )
 }
