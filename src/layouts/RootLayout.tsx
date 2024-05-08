@@ -3,8 +3,9 @@ import { Box, Container, Stack } from '@mui/material'
 import Nav from '../components/Nav'
 import Logo from '../components/Logo'
 import Footer from '../components/Footer'
+import Auth from '../service/auth'
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+const RootLayout = ({ children, auth }: { children: React.ReactNode; auth: Auth }) => {
   return (
     <>
       <Container
@@ -15,7 +16,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         }}
       >
         <Stack spacing={2}>
-          <Nav />
+          <Nav auth={auth} />
           <Logo />
           <Box>{children}</Box>
         </Stack>

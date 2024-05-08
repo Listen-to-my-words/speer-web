@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App' // eslint-disable-next-line
 import { BrowserRouter } from 'react-router-dom'
+import Auth from './service/auth'
+
+const auth = new Auth()
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <BrowserRouter>
-    <App />
+    <App auth={auth} />
   </BrowserRouter>
 )
 
