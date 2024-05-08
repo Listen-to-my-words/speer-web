@@ -1,5 +1,6 @@
 import React from 'react'
 import { Divider, Stack, Typography } from '@mui/material'
+import Profile from '../components/my-page/Profile'
 
 const MyPage = () => {
   return (
@@ -17,6 +18,7 @@ const MyPage = () => {
       >
         마이페이지
       </Typography>
+      <Profile />
     </Stack>
   )
 }
