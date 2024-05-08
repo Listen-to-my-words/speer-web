@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar, Box, Stack, Typography } from '@mui/material'
 import useProfileStore from '../../states/useProfileStore'
-import BorderLinearProgress from '../BorderLinearProgressr'
+import BorderLinearProgress from '../BorderLinearProgress'
 
 const ProgressBar = () => {
   return (
@@ -16,18 +16,11 @@ const ProgressBar = () => {
         진행도
       </Typography>
       <BorderLinearProgress
-        variant={'determinate'}
         value={50}
         sx={{
           width: ['10rem', '100%'],
           maxWidth: '30rem',
-          height: ['0.5rem', '1.25rem'],
-          borderRadius: '0.75rem',
-          backgroundColor: 'lightgray',
-          '& .MuiLinearProgress-bar': {
-            borderRadius: 5,
-            backgroundColor: '#FFAE80'
-          }
+          height: ['0.5rem', '1.25rem']
         }}
       />
       <Typography variant={'body2'}>50%</Typography>
