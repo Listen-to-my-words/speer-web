@@ -7,27 +7,37 @@ import { dialogList } from '../../../../const/DialogList'
 import { IDialog } from '../../../../types/IDialogs'
 
 const DialogBox = ({ week, level }: { week: number; level: number }) => {
-  const [currLevel, setCurrLevel] = useState<IDialog[]>([] as IDialog[])
+  const [currLevel, setCurrLevel] = useState<IDialog[]>(dialogList[week - 1][level - 1].slice(1))
   const [images, setImages] = useState<[string, string]>(['', ''])
 
+  const setNextImage = () => {
+    const nextImage = currLevel.slice(1).find((dialog) => dialog.type === 'CHANGE_IMAGE')
+    setImages((prev) => [prev[1], nextImage ? nextImage.content : ''])
+  }
+
   useEffect(() => {
-    setCurrLevel(dialogList[week - 1][level - 1])
-    const currImage = dialogList[week - 1][level - 1].find((dialog) => dialog.type === 'CHANGE_IMAGE')
+    const currImage = dialogList[week - 1][level - 1][0]
+    console.log(dialogList[week - 1][level - 1])
     const nextImage = dialogList[week - 1][level - 1].find(
       (dialog) => dialog.type === 'CHANGE_IMAGE' && dialog.content !== currImage?.content
     )
     setImages(() => [currImage ? currImage.content : '', nextImage ? nextImage.content : ''])
+    console.log(currLevel[0])
   }, [])
 
   const handleOnClick = () => {
-    if (currLevel.length === 0) {
+    if (currLevel.length === 1) {
       return
     }
-    setCurrLevel((prev) => prev.slice(1))
-    if (currLevel[0].type === 'CHANGE_IMAGE') {
-      const nextImage = currLevel.slice(1).find((dialog) => dialog.type === 'CHANGE_IMAGE')
-      setImages(() => [currLevel[0]?.content, nextImage ? nextImage.content : ''])
-    }
+    setCurrLevel((prev) => {
+      const newCurrLevel = prev.slice(1)
+      console.log(newCurrLevel[0])
+      if (newCurrLevel[0].type === 'CHANGE_IMAGE') {
+        setNextImage()
+        return newCurrLevel.slice(1)
+      }
+      return newCurrLevel
+    })
   }
 
   return (
@@ -40,7 +50,7 @@ const DialogBox = ({ week, level }: { week: number; level: number }) => {
       onClick={handleOnClick}
     >
       <DialogBackground images={images} />
-      <Dialog />
+      {currLevel.length && <Dialog currDialog={currLevel[0]} />}
     </Box>
   )
 }
