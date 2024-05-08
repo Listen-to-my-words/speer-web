@@ -1,20 +1,45 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // import React from 'react'
 import { Button, Stack, Typography } from '@mui/material'
-import useAuthState from '../states/useAuthState'
+import useProfileStore from '../states/useProfileStore'
 import Auth from '../service/auth'
 
 const Nav = ({ auth }: { auth: Auth }) => {
-  const { setProfile, profile } = useAuthState()
+  const { setProfile, profile } = useProfileStore()
 
-  const signIn = () => {
+  useEffect(() => {
+    if (!profile) {
+      auth.onAuthChange((user) => {
+        if (user) {
+          setProfile({
+            email: user.email,
+            displayName: user.displayName,
+            photoURL: user.photoURL
+          })
+        }
+      })
+    }
+  }, [])
+
+  const signIn = async () => {
     if (auth) {
-      auth.login().then((data) => {
-        setProfile({
-          email: data.user.email,
-          displayName: data.user.displayName,
-          photoURL: data.user.photoURL
-        })
+      await auth.setPersistence()
+      await auth.onAuthChange((user) => {
+        if (user) {
+          setProfile({
+            email: user.email,
+            displayName: user.displayName,
+            photoURL: user.photoURL
+          })
+        } else {
+          auth.login().then((data) => {
+            setProfile({
+              email: data.user.email,
+              displayName: data.user.displayName,
+              photoURL: data.user.photoURL
+            })
+          })
+        }
       })
     }
   }

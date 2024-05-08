@@ -7,19 +7,23 @@ interface IProfile {
   displayName?: string
 }
 
-interface IAuthState {
+interface IProfileState {
   profile: IProfile | null
   setProfile: (profile: IProfile) => void
 }
 
-const useAuthState = create<IAuthState>((set) => ({
-  profile: null,
-  setProfile: (profile: IProfile) => {
+const useProfileStore = create<IProfileState>((set) => {
+  const setProfile = (profile: IProfile) => {
     set((prev) => ({
       ...prev,
       profile
     }))
   }
-}))
 
-export default useAuthState
+  return {
+    profile: null,
+    setProfile
+  }
+})
+
+export default useProfileStore

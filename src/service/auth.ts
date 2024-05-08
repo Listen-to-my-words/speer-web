@@ -1,22 +1,28 @@
+/* eslint-disable no-shadow */
+import firebase from 'firebase/compat/app'
+/* eslint-disable class-methods-use-this */
 import { app, authService, googleProvider } from './firebase'
 
 class Auth {
-  // eslint-disable-next-line
   login() {
     const provider = googleProvider
 
     return authService.signInWithPopup(provider)
   }
-  // eslint-disable-next-line
+
   logout() {
     app.auth().signOut()
   }
 
-  // eslint-disable-next-line
-  onAuthChange = (callback) => {
+  onAuthChange = (callback: (user: any) => any) => {
     app.auth().onAuthStateChanged((user) => {
       callback(user)
     })
   }
+
+  setPersistence = () => {
+    return authService.setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+  }
 }
+
 export default Auth
