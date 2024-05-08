@@ -5,6 +5,7 @@ import Root from './pages/Root'
 import Game from './pages/Game'
 import Auth from './service/auth'
 import RootLayout from './layouts/RootLayout'
+import MyPage from './pages/MyPage'
 
 function App({ auth }: { auth: Auth }) {
   return (
@@ -22,6 +23,14 @@ function App({ auth }: { auth: Auth }) {
         element={
           <RootLayout auth={auth}>
             <Game />
+          </RootLayout>
+        }
+      />
+      <Route
+        path={'/my-page'}
+        element={
+          <RootLayout auth={auth}>
+            <MyPage />
           </RootLayout>
         }
       />
