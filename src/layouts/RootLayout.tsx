@@ -4,10 +4,11 @@ import Nav from '../components/Nav'
 import Logo from '../components/Logo'
 import Footer from '../components/Footer'
 import Auth from '../service/auth'
+import MuiThemeProvider from '../components/MuiThemeProvider'
 
 const RootLayout = ({ children, auth }: { children: React.ReactNode; auth: Auth }) => {
   return (
-    <>
+    <MuiThemeProvider>
       <Container
         maxWidth={'md'}
         sx={{
@@ -22,7 +23,7 @@ const RootLayout = ({ children, auth }: { children: React.ReactNode; auth: Auth 
         </Stack>
       </Container>
       <Footer />
-    </>
+    </MuiThemeProvider>
   )
 }
 export default RootLayout
