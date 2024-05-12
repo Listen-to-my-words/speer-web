@@ -30,9 +30,11 @@ const Subtitle = ({ week, currLevel }: { week: number; currLevel: number }) => {
       <IconButton onClick={handleNavBeforeClick(week, currLevel)} disabled={week === 1 && currLevel === 1}>
         <KeyboardArrowLeftIcon />
       </IconButton>
-      <Stack direction={'row'} spacing={2}>
-        <Typography variant={'h4'}>{`${week}주차 - ${levelList[week - 1].title} (${currLevel})`}</Typography>
-        <Typography variant={'caption'}>{levelList[week - 1].subLevels[currLevel - 1].title}</Typography>
+      <Stack direction={['column', 'row']} spacing={2} justifyContent={'center'}>
+        <Typography
+          variant={'Title2Emphasis'}
+        >{`${week}주차 - ${levelList[week - 1].title} (${currLevel})`}</Typography>
+        <Typography variant={'Subtitle2'}>{levelList[week - 1].subLevels[currLevel - 1].title}</Typography>
       </Stack>
       <IconButton onClick={handleNavNextClick(week, currLevel)} disabled={week === 4 && currLevel === 3}>
         <KeyboardArrowRightIcon />

@@ -92,7 +92,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
   }
 
   if (colorTheme.typography) {
-    colorTheme.typography.fontFamily = 'var(--main-font), Pretendard Variable, sans-serif'
+    // colorTheme.typography.fontFamily = 'var(--main-font), Pretendard Variable'
 
     colorTheme.typography.Title1Emphasis = {
       fontWeight: 700,
@@ -126,7 +126,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '2rem'
-        fontSize: 32
+        fontSize: 18
       }
     }
 
@@ -138,7 +138,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '2rem'
-        fontSize: 32
+        fontSize: 18
       }
     }
 
@@ -150,7 +150,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '1.75rem'
-        fontSize: 28
+        fontSize: 16
       }
     }
 
@@ -162,14 +162,14 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '1.75rem'
-        fontSize: 28
+        fontSize: 16
       }
     }
 
     colorTheme.typography.Subtitle1Emphasis = {
-      fontWeight: 500,
+      fontWeight: 600,
       // fontSize: '1.5rem',
-      fontSize: 24,
+      fontSize: 20,
       lineHeight: 1.5,
       color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
@@ -181,7 +181,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
     colorTheme.typography.Subtitle1 = {
       fontWeight: 400,
       // fontSize: '1.5rem',
-      fontSize: 24,
+      fontSize: 20,
       lineHeight: 1.5,
       color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
@@ -191,9 +191,9 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
     }
 
     colorTheme.typography.Subtitle2Emphasis = {
-      fontWeight: 500,
+      fontWeight: 600,
       // fontSize: '1.25rem',
-      fontSize: 20,
+      fontSize: 18,
       lineHeight: 1.5,
       color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
@@ -205,7 +205,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
     colorTheme.typography.Subtitle2 = {
       fontWeight: 400,
       // fontSize: '1.25rem',
-      fontSize: 20,
+      fontSize: 18,
       lineHeight: 1.5,
       color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
@@ -222,7 +222,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '0.875rem'
-        fontSize: 14
+        fontSize: 12
       }
     }
 
@@ -234,7 +234,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '0.875rem'
-        fontSize: 14
+        fontSize: 12
       }
     }
 

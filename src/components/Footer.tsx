@@ -17,7 +17,7 @@ const Footer = () => {
         // transform: 'translateY(-100%)'
       }}
     >
-      <Typography variant={'subtitle2'} sx={{ color: '#ffffff' }}>
+      <Typography variant={'Subtitle2'} sx={{ color: '#ffffff' }}>
         {'서울여자대학교 바롬 2팀 내 말을 들어조'}
       </Typography>
     </Stack>

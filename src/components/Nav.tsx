@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react'
 // import React from 'react'
 import { Button, Stack, Typography } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 import useProfileStore from '../states/useProfileStore'
 import Auth from '../service/auth'
 
 const Nav = ({ auth }: { auth: Auth }) => {
   const { setProfile, profile } = useProfileStore()
+
+  const navigator = useNavigate()
 
   useEffect(() => {
     if (!profile) {
@@ -54,7 +57,7 @@ const Nav = ({ auth }: { auth: Auth }) => {
   return (
     <Stack direction={'row'} justifyContent={'flex-end'} spacing={2}>
       <Button variant={'text'}>
-        <Typography variant={'Caption'} color={'text.primary'}>
+        <Typography variant={'Caption'} color={'text.primary'} onClick={() => navigator('/my-page')}>
           {'마이페이지'}
         </Typography>
       </Button>

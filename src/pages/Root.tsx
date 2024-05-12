@@ -19,7 +19,7 @@ const Root = () => {
         />
       </Grid>
       <Grid xs={12}>
-        <Typography variant={'h6'}>{'학습 자료실'}</Typography>
+        <Typography variant={'Title3Emphasis'}>{'학습 자료실'}</Typography>
       </Grid>
       {levelList.map((level) => (
         <Grid xs={6} key={level.week}>

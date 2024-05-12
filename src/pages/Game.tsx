@@ -15,7 +15,7 @@ const Game = () => {
       <Subtitle week={Number(week)} currLevel={Number(currLevel)} />
       <DialogBox week={Number(week)} level={Number(currLevel)} />
       <NavButtons />
-      <Typography variant={'h6'}>목록</Typography>
+      <Typography variant={'Title3Emphasis'}>목록</Typography>
       <Stack spacing={4}>
         {levelList.map((level) => (
           <Level key={level.title} level={level} />

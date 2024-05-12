@@ -13,7 +13,7 @@ const MyPage = () => {
           }}
         />
         <Typography
-          variant={'h4'}
+          variant={'Title2Emphasis'}
           sx={{
             py: '2rem'
           }}

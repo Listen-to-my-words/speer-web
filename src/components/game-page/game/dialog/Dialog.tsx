@@ -10,7 +10,7 @@ const Dialog = ({ currDialog }: { currDialog: IDialog }) => {
   }
   return (
     <Box sx={style.dialogStyle}>
-      <Typography variant={'body2'} sx={style.dialogTextStyle}>
+      <Typography variant={'Body2'} sx={style.dialogTextStyle}>
         {currDialog.content}
       </Typography>
       <ArrowDropDownIcon sx={style.arrowStyle} fontSize={'large'} />

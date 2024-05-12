@@ -10,9 +10,9 @@ const ProgressBar = () => {
       alignItems={'center'}
       justifyContent={['center', 'space-between']}
       spacing={2}
-      sx={{ width: '100%', px: [2, 0], paddingLeft: [0, '11rem'], boxSizing: 'border-box', maxWidth: '48rem' }}
+      sx={{ width: '100%', paddingLeft: [0, '11rem'], boxSizing: 'border-box', maxWidth: '48rem' }}
     >
-      <Typography variant={'body2'} sx={{ wordBreak: 'keep-all' }}>
+      <Typography variant={'Body1'} sx={{ wordBreak: 'keep-all' }}>
         진행도
       </Typography>
       <BorderLinearProgress
@@ -23,7 +23,9 @@ const ProgressBar = () => {
           height: ['0.5rem', '1.25rem']
         }}
       />
-      <Typography variant={'body2'}>50%</Typography>
+      <Typography variant={'Body1'} color={'text.secondary'}>
+        50%
+      </Typography>
     </Stack>
   )
 }
@@ -54,7 +56,7 @@ const ProfileInfo = ({ displayName, email }: { displayName: string; email: strin
         maxWidth: '37rem'
       }}
     >
-      <Typography variant={'body2'}>{`${displayName}(${email})`}</Typography>
+      <Typography variant={'Body1Emphasis'}>{`${displayName}(${email})`}</Typography>
       <Stack
         direction={'row'}
         spacing={[1, 4]}
