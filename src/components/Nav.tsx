@@ -54,16 +54,22 @@ const Nav = ({ auth }: { auth: Auth }) => {
   return (
     <Stack direction={'row'} justifyContent={'flex-end'} spacing={2}>
       <Button variant={'text'}>
-        <Typography variant={'caption'}>{'마이페이지'}</Typography>
+        <Typography variant={'Caption'} color={'text.primary'}>
+          {'마이페이지'}
+        </Typography>
       </Button>
 
       {profile ? (
         <Button variant={'text'} onClick={signOut}>
-          <Typography variant={'caption'}>{'로그아웃'}</Typography>
+          <Typography variant={'Caption'} color={'text.primary'}>
+            {'로그아웃'}
+          </Typography>
         </Button>
       ) : (
         <Button variant={'text'} onClick={signIn}>
-          <Typography variant={'caption'}>{'로그인/회원가입'}</Typography>
+          <Typography variant={'Caption'} color={'text.primary'}>
+            {'로그인/회원가입'}
+          </Typography>
         </Button>
       )}
     </Stack>

@@ -61,7 +61,7 @@ const Level = ({ level }: { level: ILevel }) => {
           src={level.image}
         />
         <Typography
-          variant={'subtitle1'}
+          variant={'Subtitle1Emphasis'}
           sx={{
             marginLeft: '0.25rem !important'
           }}
@@ -106,7 +106,11 @@ const Level = ({ level }: { level: ILevel }) => {
                   }}
                   onClick={handleLevelClick(level.week, subLevel.level)}
                 >
-                  <Typography variant={'subtitle2'} align={'center'} width={1}>{`${subLevel.title}`}</Typography>
+                  <Typography
+                    variant={'Subtitle2Emphasis'}
+                    align={'center'}
+                    width={1}
+                  >{`${subLevel.title}`}</Typography>
                 </Button>
               </Grid>
             ))}

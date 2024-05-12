@@ -8,7 +8,7 @@ const Footer = () => {
       justifyContent={'center'}
       alignItems={'center'}
       sx={{
-        bgcolor: 'lightgray',
+        bgcolor: 'primary.main',
         height: ['2rem', '8rem'],
         width: '100vw',
         left: 0,
@@ -17,7 +17,9 @@ const Footer = () => {
         // transform: 'translateY(-100%)'
       }}
     >
-      <Typography variant={'subtitle2'}>{'서울여자대학교 바롬 2팀 내 말을 들어조'}</Typography>
+      <Typography variant={'subtitle2'} sx={{ color: '#ffffff' }}>
+        {'서울여자대학교 바롬 2팀 내 말을 들어조'}
+      </Typography>
     </Stack>
   )
 }
