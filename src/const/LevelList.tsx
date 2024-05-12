@@ -2,7 +2,7 @@ import { ILevel } from '../types/ILevels'
 
 const levelList: [ILevel, ILevel, ILevel, ILevel] = [
   {
-    image: 'https://picsum.photos/200',
+    image: '/images/01_week_thumbnail.png',
     week: 1,
     title: '성장이의 입학',
     subLevels: [
@@ -21,7 +21,7 @@ const levelList: [ILevel, ILevel, ILevel, ILevel] = [
     ]
   },
   {
-    image: 'https://picsum.photos/200',
+    image: '/images/02_week_thumbnail.png',
     week: 2,
     title: '2주차',
     subLevels: [
@@ -40,7 +40,7 @@ const levelList: [ILevel, ILevel, ILevel, ILevel] = [
     ]
   },
   {
-    image: 'https://picsum.photos/200',
+    image: '/images/03_week_thumbnail.png',
     week: 3,
     title: '3주차',
     subLevels: [
@@ -59,7 +59,7 @@ const levelList: [ILevel, ILevel, ILevel, ILevel] = [
     ]
   },
   {
-    image: 'https://picsum.photos/200',
+    image: '/images/04_week_thumbnail.png',
     week: 4,
     title: '4주차',
     subLevels: [

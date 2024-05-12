@@ -7,11 +7,11 @@ const Logo = () => {
   return (
     <Box
       component={'img'}
-      src={'https://picsum.photos/90'}
+      src={'/logo.png'}
       width={'8rem'}
       height={'8rem'}
       onClick={() => navigate('/')}
-      sx={{ mb: '2rem !important' }}
+      sx={{ mb: '2rem !important', backgroundColor: '#fff' }}
     />
   )
 }

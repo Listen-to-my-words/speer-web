@@ -55,7 +55,8 @@ const Level = ({ level }: { level: ILevel }) => {
             height: 'calc((100vw - 3rem) / 2)',
             maxHeight: '20rem',
             backgroundColor: 'lightgray',
-            borderRadius: '0.5rem'
+            borderRadius: '0.5rem',
+            objectFit: 'cover'
           }}
           component={'img'}
           src={level.image}
