@@ -98,7 +98,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       fontWeight: 700,
       // fontSize: '2.5rem',
       fontSize: 40,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       lineHeight: 1.5,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '2.25rem'
@@ -111,7 +111,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '2.5rem',
       fontSize: 40,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '2.25rem'
         fontSize: 36
@@ -123,7 +123,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '2.25rem',
       fontSize: 36,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '2rem'
         fontSize: 18
@@ -135,7 +135,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '2.25rem',
       fontSize: 36,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '2rem'
         fontSize: 18
@@ -147,7 +147,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '2rem',
       fontSize: 32,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '1.75rem'
         fontSize: 16
@@ -159,7 +159,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '2rem',
       fontSize: 32,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '1.75rem'
         fontSize: 16
@@ -171,7 +171,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '1.5rem',
       fontSize: 20,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '1.25rem'
         fontSize: 14
@@ -183,7 +183,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '1.5rem',
       fontSize: 20,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '1.25rem'
         fontSize: 14
@@ -195,7 +195,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '1.25rem',
       fontSize: 18,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '1rem'
         fontSize: 12
@@ -207,7 +207,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '1.25rem',
       fontSize: 18,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '1rem'
         fontSize: 12
@@ -219,7 +219,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '1rem',
       fontSize: 16,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '0.875rem'
         fontSize: 12
@@ -231,7 +231,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '1rem',
       fontSize: 16,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '0.875rem'
         fontSize: 12
@@ -243,7 +243,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '0.875rem',
       fontSize: 14,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '0.75rem'
         fontSize: 12
@@ -255,7 +255,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '0.875rem',
       fontSize: 14,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '0.75rem'
         fontSize: 12
@@ -267,7 +267,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '0.75rem',
       fontSize: 12,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '0.625rem'
         fontSize: 10
@@ -279,7 +279,7 @@ const MuiThemeProvider = ({ children }: { children: React.ReactNode }) => {
       // fontSize: '0.75rem',
       fontSize: 12,
       lineHeight: 1.5,
-      color: colorTheme.palette.text.primary,
+      // color: colorTheme.palette.text.primary,
       [colorTheme.breakpoints.down('sm')]: {
         // fontSize: '0.625rem'
         fontSize: 10

@@ -108,9 +108,10 @@ const Level = ({ level }: { level: ILevel }) => {
                   onClick={handleLevelClick(level.week, subLevel.level)}
                 >
                   <Typography
-                    variant={'Subtitle2Emphasis'}
+                    variant={'Subtitle2'}
                     align={'center'}
                     width={1}
+                    color={'text.primary'}
                   >{`${subLevel.title}`}</Typography>
                 </Button>
               </Grid>
