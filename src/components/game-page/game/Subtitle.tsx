@@ -11,14 +11,12 @@ const Subtitle = ({ week, currLevel }: { week: number; currLevel: number }) => {
     if (week !== 1) navigator(`/`)
   }, [week, navigator])
 
-  // eslint-disable-next-line
   const handleNavBeforeClick = (week: number, subLevel: number) => {
     const beforeLevel = subLevel === 1 ? 3 : subLevel - 1
     const beforeWeek = beforeLevel === 3 ? week - 1 : week
     return () => navigator(`/game/${beforeWeek}/${beforeLevel}`)
   }
 
-  // eslint-disable-next-line
   const handleNavNextClick = (week: number, subLevel: number) => {
     const nextLevel = subLevel === 3 ? 1 : subLevel + 1
     const nextWeek = nextLevel === 1 ? week + 1 : week
