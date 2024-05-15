@@ -1,11 +1,13 @@
 import { Avatar, Divider, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Grid from '@mui/system/Unstable_Grid/Grid'
 import { levelList } from '../../const/LevelList'
 import { ILevel, ISubLevel } from '../../types/ILevels'
 import BorderLinearProgress from '../BorderLinearProgress'
+import Database from '../../service/database'
+import { IProgress } from '../../types/IProgress'
 
-const SubCourseInfo = ({ subLevel }: { subLevel: ISubLevel }) => {
+const SubCourseInfo = ({ subLevel, progress }: { subLevel: ISubLevel; progress: number }) => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.up('sm'))
   return (
@@ -17,7 +19,7 @@ const SubCourseInfo = ({ subLevel }: { subLevel: ISubLevel }) => {
         <Grid xs={10} sm={8}>
           {matches ? (
             <BorderLinearProgress
-              value={50}
+              value={progress}
               sx={{
                 width: '100%',
                 maxWidth: '20rem',
@@ -34,7 +36,6 @@ const SubCourseInfo = ({ subLevel }: { subLevel: ISubLevel }) => {
                   borderColor: 'lightgray',
                   display: 'inline-block',
                   width: '60%'
-                  // height: '1px'
                 }}
               />
             </Stack>
@@ -42,7 +43,7 @@ const SubCourseInfo = ({ subLevel }: { subLevel: ISubLevel }) => {
         </Grid>
         <Grid xs={2} sm={4}>
           <Typography variant={'Body1'} sx={{ width: '100%' }} textAlign={'right'}>
-            50%
+            {`${progress}%`}
           </Typography>
         </Grid>
       </Grid>
@@ -50,14 +51,14 @@ const SubCourseInfo = ({ subLevel }: { subLevel: ISubLevel }) => {
   )
 }
 
-const CourseInfo = ({ level }: { level: ILevel }) => {
+const CourseInfo = ({ level, progress }: { level: ILevel; progress: [number, number, number] }) => {
   return (
     <Stack spacing={[1, 4]} width={1} pt={0.5} pb={[0, 3.5]} direction={'column'} justifyContent={'space-between'}>
       <Typography variant={'Subtitle1Emphasis'}>{`< ${level.week}주차 > - ${level.title}`}</Typography>
       {/* <Stack spacing={2}> */}
-      {level.subLevels.map((subLevel) => (
+      {level.subLevels.map((subLevel, index) => (
         <Grid container sx={{ width: '100%' }}>
-          <SubCourseInfo subLevel={subLevel} />
+          <SubCourseInfo subLevel={subLevel} progress={progress[index]} />
         </Grid>
       ))}
       {/* </Stack> */}
@@ -65,7 +66,7 @@ const CourseInfo = ({ level }: { level: ILevel }) => {
   )
 }
 
-const Course = ({ level }: { level: ILevel }) => {
+const Course = ({ level, progress }: { level: ILevel; progress: [number, number, number] }) => {
   return (
     <Stack direction={'row'} spacing={[2, 6]} alignContent={'center'}>
       <Avatar
@@ -77,18 +78,32 @@ const Course = ({ level }: { level: ILevel }) => {
           borderRadius: '0.5rem'
         }}
       />
-      <CourseInfo level={level} />
+      <CourseInfo level={level} progress={progress} />
     </Stack>
   )
 }
 
-const CourseList = () => {
+const CourseList = ({ database, displayName }: { database: Database; displayName: string }) => {
+  const [isLoading, setIsLoading] = useState(false)
+  const [progress, setProgress] = useState<IProgress | null>(null)
+
+  useEffect(() => {
+    setIsLoading(true)
+    const fetchData = async () => {
+      await database.getProgress(displayName).then((data) => setProgress(data))
+      setIsLoading(false)
+    }
+    if (!isLoading) fetchData()
+  }, [])
+
+  if (!progress) return null
+
   return (
     <Stack direction={'column'} spacing={7}>
       <Typography variant={'Title3Emphasis'}>수강 과목</Typography>
       <Stack direction={'column'} spacing={5}>
-        {levelList.map((level) => (
-          <Course level={level} />
+        {levelList.map((level, index) => (
+          <Course level={level} progress={progress[index]} key={new Date().toISOString()} />
         ))}
       </Stack>
     </Stack>

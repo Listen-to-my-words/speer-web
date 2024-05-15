@@ -6,14 +6,16 @@ import App from './App' // eslint-disable-next-line
 import { BrowserRouter } from 'react-router-dom'
 import MuiThemeProvider from './components/MuiThemeProvider'
 import Auth from './service/auth'
+import Database from './service/database'
 
 const auth = new Auth()
+const database = new Database()
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <MuiThemeProvider>
     <BrowserRouter>
-      <App auth={auth} />
+      <App auth={auth} database={database} />
     </BrowserRouter>
   </MuiThemeProvider>
 )

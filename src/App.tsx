@@ -6,8 +6,9 @@ import Game from './pages/Game'
 import Auth from './service/auth'
 import RootLayout from './layouts/RootLayout'
 import MyPage from './pages/MyPage'
+import Database from './service/database'
 
-function App({ auth }: { auth: Auth }) {
+function App({ auth, database }: { auth: Auth; database: Database }) {
   return (
     <Routes>
       <Route
@@ -30,7 +31,7 @@ function App({ auth }: { auth: Auth }) {
         path={'/my-page'}
         element={
           <RootLayout auth={auth}>
-            <MyPage />
+            <MyPage auth={auth} database={database} />
           </RootLayout>
         }
       />
