@@ -12,7 +12,8 @@ export const SubLevel = ({ subLevelTitle }: { subLevelTitle: string }) => {
   )
 }
 
-const Level = ({ level }: { level: ILevel }) => {
+const Level = ({ level, progress }: { level: ILevel; progress: [number, number, number] }) => {
+  const isFinished = progress[0] === 100 && progress[1] === 100 && progress[2] === 100
   return (
     <Accordion
       sx={{
@@ -35,7 +36,7 @@ const Level = ({ level }: { level: ILevel }) => {
           </Grid>
           <Grid xs={4}>
             <Typography variant={'Body2'} textAlign={'center'} width={'100%'}>
-              학습 완료
+              {isFinished ? '학습 완료' : '학습 중'}
             </Typography>
           </Grid>
         </Grid>

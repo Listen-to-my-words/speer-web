@@ -23,7 +23,7 @@ function App({ auth, database }: { auth: Auth; database: Database }) {
         path={'/game/:week/:level'}
         element={
           <RootLayout auth={auth}>
-            <Game />
+            <Game auth={auth} database={database} />
           </RootLayout>
         }
       />
