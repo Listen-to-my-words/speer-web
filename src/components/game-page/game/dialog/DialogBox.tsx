@@ -7,15 +7,19 @@ import { dialogList } from '../../../../const/DialogList'
 import { IDialog } from '../../../../types/IDialogs'
 import useModal from '../../../../hooks/useModal'
 
-const DialogBox = ({ week, level }: { week: number; level: number }) => {
-  const [currLevel, setCurrLevel] = useState<IDialog[]>(dialogList[week - 1][level - 1].slice(1))
+const DialogBox = ({
+  week,
+  level,
+  currLevel,
+  setCurrLevel
+}: {
+  week: number
+  level: number
+  currLevel: IDialog[]
+  setCurrLevel: React.Dispatch<React.SetStateAction<IDialog[]>>
+}) => {
   const [images, setImages] = useState<[string, string]>(['', ''])
   const { isOpen, openModal, closeModal, setIsOpen } = useModal()
-
-  // const setNextImage = () => {
-  //   const nextImage = currLevel.slice(1).find((dialog) => dialog.type === 'CHANGE_IMAGE')
-  //   setImages((prev) => [prev[1], nextImage ? nextImage.content : ''])
-  // }
 
   useEffect(() => {
     const currImage = dialogList[week - 1][level - 1][0]

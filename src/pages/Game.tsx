@@ -10,9 +10,12 @@ import useProfileStore from '../states/useProfileStore'
 import Auth from '../service/auth'
 import Database from '../service/database'
 import { IProgress } from '../types/IProgress'
+import { IDialog } from '../types/IDialogs'
+import { dialogList } from '../const/DialogList'
 
 const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
   const { week, level: currLevel } = useParams()
+  const [subLevel, setSubLevel] = useState<IDialog[]>(dialogList[Number(week) - 1][Number(currLevel) - 1].slice(1))
 
   const { profile, setProfile } = useProfileStore()
   const navigate = useNavigate()
@@ -55,8 +58,8 @@ const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
   return (
     <Stack spacing={4}>
       <Subtitle week={Number(week)} currLevel={Number(currLevel)} />
-      <DialogBox week={Number(week)} level={Number(currLevel)} />
-      <NavButtons week={Number(week)} level={Number(currLevel)} />
+      <DialogBox week={Number(week)} level={Number(currLevel)} currLevel={subLevel} setCurrLevel={setSubLevel} />
+      <NavButtons week={Number(week)} level={Number(currLevel)} setCurrLevel={setSubLevel} />
       <Typography variant={'Title3Emphasis'}>목록</Typography>
       <Stack spacing={4}>
         {levelList.map((level, index) => (
