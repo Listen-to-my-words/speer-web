@@ -28,16 +28,37 @@ const Subtitle = ({ week, currLevel }: { week: number; currLevel: number }) => {
   return (
     <Stack justifyContent={'space-between'} alignItems={'center'} direction={'row'}>
       <IconButton onClick={handleNavBeforeClick(week, currLevel)} disabled={week === 1 && currLevel === 1}>
-        <KeyboardArrowLeftIcon />
+        <KeyboardArrowLeftIcon
+          sx={{
+            fontSize: '3rem',
+            color: week === 1 && currLevel === 1 ? 'lightgray' : 'primary.main'
+          }}
+        />
       </IconButton>
-      <Stack direction={['column', 'row']} spacing={2} justifyContent={'center'}>
+      <Stack
+        direction={['column', 'row']}
+        spacing={[2, 4]}
+        width={1}
+        justifyContent={['center', undefined]}
+        alignItems={'center'}
+      >
+        <Typography variant={'Subtitle2'} sx={{ px: [0, 2], opacity: 0, display: ['none', 'block'] }} aria-hidden>
+          {levelList[week - 1].subLevels[currLevel - 1].title}
+        </Typography>
         <Typography
           variant={'Title2Emphasis'}
         >{`${week}주차 - ${levelList[week - 1].title} (${currLevel})`}</Typography>
-        <Typography variant={'Subtitle2'}>{levelList[week - 1].subLevels[currLevel - 1].title}</Typography>
+        <Typography variant={'Subtitle2'} sx={{ px: [0, 2] }}>
+          {levelList[week - 1].subLevels[currLevel - 1].title}
+        </Typography>
       </Stack>
       <IconButton onClick={handleNavNextClick(week, currLevel)} disabled={week === 4 && currLevel === 3}>
-        <KeyboardArrowRightIcon />
+        <KeyboardArrowRightIcon
+          sx={{
+            fontSize: '3rem',
+            color: week === 4 && currLevel === 3 ? 'lightgray' : 'primary.main'
+          }}
+        />
       </IconButton>
     </Stack>
   )
