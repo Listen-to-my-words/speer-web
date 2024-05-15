@@ -103,7 +103,7 @@ const CourseList = ({ database, displayName }: { database: Database; displayName
       <Typography variant={'Title3Emphasis'}>수강 과목</Typography>
       <Stack direction={'column'} spacing={5}>
         {levelList.map((level, index) => (
-          <Course level={level} progress={progress[index]} key={new Date().toISOString()} />
+          <Course level={level} progress={progress[index]} key={level.title} />
         ))}
       </Stack>
     </Stack>

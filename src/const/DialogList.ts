@@ -83,7 +83,8 @@ export const week1Level1: Array<IDialog> = [
     type: EDialogType.SELECTION,
     content: '어떻게 말을 걸까?',
     selection: ['앉는다', '앉지 않는다'],
-    next: [week1Level1Select0, week1Level1Select1]
+    next: [week1Level1Select0, week1Level1Select1],
+    progress: 50
   }
 ]
 

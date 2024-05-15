@@ -16,6 +16,7 @@ import { dialogList } from '../const/DialogList'
 const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
   const { week, level: currLevel } = useParams()
   const [subLevel, setSubLevel] = useState<IDialog[]>(dialogList[Number(week) - 1][Number(currLevel) - 1].slice(1))
+  const [images, setImages] = useState<[string, string]>(['', ''])
 
   const { profile, setProfile } = useProfileStore()
   const navigate = useNavigate()
@@ -24,6 +25,10 @@ const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
   const [progress, setProgress] = useState<IProgress | null>(null)
 
   useEffect(() => {
+    const fetchData = async (displayName: string) => {
+      await database.getProgress(displayName).then((data) => setProgress(data))
+      setIsLoading(false)
+    }
     if (!profile) {
       auth.onAuthChange((user) => {
         if (user) {
@@ -33,19 +38,15 @@ const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
             photoURL: user.photoURL
           })
           setIsLoading(true)
-          const fetchData = async () => {
-            await database.getProgress(user.displayName).then((data) => setProgress(data))
-            setIsLoading(false)
-          }
-          if (!isLoading) fetchData()
+          if (!isLoading) fetchData(user.displayName)
         } else {
           navigate('/')
         }
       })
-    }
+    } else if (!isLoading) fetchData(profile.displayName)
   }, [])
 
-  if (!profile || !progress || isLoading) {
+  if (!profile) {
     return (
       <Backdrop open>
         <CircularProgress />
@@ -55,17 +56,36 @@ const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
 
   if (!progress) return null
 
+  const updateProgress = (level: number, updateProgress: number) => {
+    const newProgress = progress
+    newProgress[Number(week) - 1][Number(level) - 1] = updateProgress
+    setProgress(newProgress)
+    database.setProgress(profile.displayName, newProgress)
+  }
+
   return (
     <Stack spacing={4}>
       <Subtitle week={Number(week)} currLevel={Number(currLevel)} />
-      <DialogBox week={Number(week)} level={Number(currLevel)} currLevel={subLevel} setCurrLevel={setSubLevel} />
+      <DialogBox
+        week={Number(week)}
+        level={Number(currLevel)}
+        currLevel={subLevel}
+        setCurrLevel={setSubLevel}
+        updateProgress={updateProgress}
+        images={images}
+        setImages={setImages}
+      />
       <NavButtons week={Number(week)} level={Number(currLevel)} setCurrLevel={setSubLevel} />
       <Typography variant={'Title3Emphasis'}>목록</Typography>
-      <Stack spacing={4}>
-        {levelList.map((level, index) => (
-          <Level key={level.title} level={level} progress={progress[index]} />
-        ))}
-      </Stack>
+      {isLoading ? (
+        <CircularProgress />
+      ) : (
+        <Stack spacing={4}>
+          {levelList.map((level, index) => (
+            <Level key={level.title} level={level} progress={progress[index]} />
+          ))}
+        </Stack>
+      )}
     </Stack>
   )
 }

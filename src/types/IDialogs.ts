@@ -12,4 +12,5 @@ export interface IDialog {
   content: string
   selection?: Array<string>
   next?: Array<Array<IDialog>>
+  progress?: number
 }
