@@ -30,6 +30,7 @@
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/no-explicit-any": "warn",
         "react/require-default-props": "off",
+        "no-shadow": "off",
         "import/extensions": [
             "error",
             "ignorePackages",

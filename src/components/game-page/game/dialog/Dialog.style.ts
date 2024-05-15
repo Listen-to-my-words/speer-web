@@ -10,7 +10,10 @@ export const dialogBoxSizeStyle: SxProps = {
 
 export const dialogBoxStyle: SxProps = {
   ...dialogBoxSizeStyle,
-  backgroundColor: 'lightgray'
+  backgroundColor: 'lightgray',
+  position: 'relative',
+  boxShadow: '0px 4px 4px 0px #B0B0B040',
+  overflow: 'hidden'
 }
 
 export const dialogStyle: SxProps = {
