@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// eslint-disable-next-line
 import { Backdrop, Box, CircularProgress, Divider, Stack, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import Profile from '../components/my-page/Profile'
@@ -71,7 +70,7 @@ const MyPage = ({ database, auth }: { database: Database; auth: Auth }) => {
         >
           마이페이지
         </Typography>
-        <Profile />
+        <Profile progress={progress} />
       </Box>
       <CourseList progress={progress} />
     </Stack>

@@ -2,8 +2,9 @@ import React from 'react'
 import { Avatar, Box, Stack, Typography } from '@mui/material'
 import useProfileStore from '../../states/useProfileStore'
 import BorderLinearProgress from '../BorderLinearProgress'
+import { IProgress } from '../../types/IProgress'
 
-const ProgressBar = () => {
+const ProgressBar = ({ progress }: { progress: number }) => {
   return (
     <Stack
       direction={'row'}
@@ -16,7 +17,7 @@ const ProgressBar = () => {
         진행도
       </Typography>
       <BorderLinearProgress
-        value={50}
+        value={progress}
         sx={{
           width: ['10rem', '100%'],
           maxWidth: '30rem',
@@ -24,7 +25,7 @@ const ProgressBar = () => {
         }}
       />
       <Typography variant={'Body1'} color={'text.secondary'}>
-        50%
+        {`${progress}%`}
       </Typography>
     </Stack>
   )
@@ -73,9 +74,27 @@ const ProfileInfo = ({ displayName, email }: { displayName: string; email: strin
     </Stack>
   )
 }
-
-const Profile = () => {
+// eslint-disable-next-line
+const Profile = ({ progress }: { progress: IProgress }) => {
   const { profile } = useProfileStore()
+
+  let total = 0
+  let count = 0
+
+  // eslint-disable-next-line
+  for (const key in progress) {
+    // eslint-disable-next-line
+    if (progress.hasOwnProperty(key)) {
+      const numbers = progress[key]
+      // eslint-disable-next-line
+      for (const num of numbers) {
+        total += num
+        count += 1
+      }
+    }
+  }
+
+  const progressAverage = total / count
 
   return (
     <Stack spacing={6}>
@@ -91,7 +110,7 @@ const Profile = () => {
         />
         <ProfileInfo displayName={profile?.displayName || '익명'} email={profile?.email || '이메일 없음'} />
       </Stack>
-      <ProgressBar />
+      <ProgressBar progress={progressAverage} />
     </Stack>
   )
 }

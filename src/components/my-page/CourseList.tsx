@@ -54,13 +54,11 @@ const CourseInfo = ({ level, progress }: { level: ILevel; progress: [number, num
   return (
     <Stack spacing={[1, 4]} width={1} pt={0.5} pb={[0, 3.5]} direction={'column'} justifyContent={'space-between'}>
       <Typography variant={'Subtitle1Emphasis'}>{`< ${level.week}주차 > - ${level.title}`}</Typography>
-      {/* <Stack spacing={2}> */}
       {level.subLevels.map((subLevel, index) => (
-        <Grid container sx={{ width: '100%' }}>
+        <Grid container sx={{ width: '100%' }} key={subLevel.title + index}>
           <SubCourseInfo subLevel={subLevel} progress={progress[index]} />
         </Grid>
       ))}
-      {/* </Stack> */}
     </Stack>
   )
 }
@@ -83,6 +81,8 @@ const Course = ({ level, progress }: { level: ILevel; progress: [number, number,
 }
 
 const CourseList = ({ progress }: { progress: IProgress }) => {
+  console.log(progress)
+  if (!progress) return null
   return (
     <Stack direction={'column'} spacing={7}>
       <Typography variant={'Title3Emphasis'}>수강 과목</Typography>
