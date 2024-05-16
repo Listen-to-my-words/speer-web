@@ -8,10 +8,10 @@ const Logo = () => {
     <Box
       component={'img'}
       src={'/logo.png'}
-      width={'8rem'}
-      height={'8rem'}
+      width={['5rem', '8rem']}
+      height={['5rem', '8rem']}
       onClick={() => navigate('/')}
-      sx={{ mb: '2rem !important', backgroundColor: '#fff' }}
+      sx={{ mb: [0, '2rem !important'], backgroundColor: '#fff' }}
     />
   )
 }
