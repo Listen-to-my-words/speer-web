@@ -4,7 +4,8 @@ export enum EDialogType {
   SEONG_JANG = 'SEONG_JANG',
   YOUNG_WON = 'YOUNG_WON',
   DIALOG = 'DIALOG',
-  SELECTION = 'SELECTION'
+  SELECTION = 'SELECTION',
+  OTHER = 'OTHER'
 }
 export interface IDialog {
   name?: string

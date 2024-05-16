@@ -39,6 +39,12 @@ const DialogBox = ({
       openModal()
       return
     }
+    if (currLevel[0].next) {
+      setCurrLevel((prev) => {
+        return prev[0].next[0]
+      })
+      return
+    }
     if (currLevel.length === 1) {
       updateProgress(level, 100)
       return
