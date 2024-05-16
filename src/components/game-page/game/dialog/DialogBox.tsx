@@ -1,14 +1,12 @@
 import { Box } from '@mui/material'
-import React, { useEffect } from 'react'
+import React from 'react'
 import Dialog from './Dialog'
 import * as style from './Dialog.style'
 import DialogBackground from './DialogBackground'
-import { dialogList } from '../../../../const/DialogList'
 import { IDialog } from '../../../../types/IDialogs'
 import useModal from '../../../../hooks/useModal'
 
 const DialogBox = ({
-  week,
   level,
   currLevel,
   setCurrLevel,
@@ -16,7 +14,6 @@ const DialogBox = ({
   images,
   setImages
 }: {
-  week: number
   level: number
   currLevel: IDialog[]
   setCurrLevel: React.Dispatch<React.SetStateAction<IDialog[]>>
@@ -26,13 +23,9 @@ const DialogBox = ({
 }) => {
   const { isOpen, openModal, closeModal, setIsOpen } = useModal()
 
-  useEffect(() => {
-    const currImage = dialogList[week - 1][level - 1][0]
-    const nextImage = dialogList[week - 1][level - 1].find(
-      (dialog) => dialog.type === 'CHANGE_IMAGE' && dialog.content !== currImage?.content
-    )
-    setImages(() => [currImage ? currImage.content : '', nextImage ? nextImage.content : ''])
-  }, [])
+  // useEffect(() => {
+
+  // }, [week, level])
 
   const handleOnClick = () => {
     if (currLevel[0].type === 'SELECTION') {

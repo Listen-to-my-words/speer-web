@@ -46,6 +46,18 @@ const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
     } else if (!isLoading) fetchData(profile.displayName)
   }, [])
 
+  useEffect(() => {
+    setSubLevel(() => {
+      const currDialog = dialogList[Number(week) - 1][Number(currLevel) - 1]
+      const currImage = dialogList[Number(week) - 1][Number(currLevel) - 1][0]
+      const nextImage = dialogList[Number(week) - 1][Number(currLevel) - 1].find(
+        (dialog) => dialog.type === 'CHANGE_IMAGE' && dialog.content !== currImage?.content
+      )
+      setImages(() => [currImage ? currImage.content : '', nextImage ? nextImage.content : ''])
+      return currDialog.slice(1)
+    })
+  }, [week, currLevel])
+
   if (!profile) {
     return (
       <Backdrop open>
@@ -67,7 +79,6 @@ const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
     <Stack spacing={4}>
       <Subtitle week={Number(week)} currLevel={Number(currLevel)} />
       <DialogBox
-        week={Number(week)}
         level={Number(currLevel)}
         currLevel={subLevel}
         setCurrLevel={setSubLevel}
