@@ -69,7 +69,8 @@ const week1Level2AfterSelection2 = [
       '옆에 있는 짝꿍에게 말을 걸며 연필과 지우개를 빌려본다.',
       '뒤에 앉은 영원이에게 연필과 지우개를 빌려본다.'
     ],
-    next: [week1Level2Selection30, week1Level2Selection31]
+    next: [week1Level2Selection30, week1Level2Selection31],
+    progress: 80
   }
 ]
 
@@ -122,7 +123,8 @@ const week1Level2AfterSelection1 = [
     type: EDialogType.SELECTION,
     content: '짝꿍에게 먼저 말을',
     selection: ['걸어본다.', '걸지 않는다.'],
-    next: [week1Level2Selection20, week1Level2Selection21]
+    next: [week1Level2Selection20, week1Level2Selection21],
+    progress: 60
   }
 ]
 
@@ -167,7 +169,8 @@ const week1Level2AfterSelection0 = [
     type: EDialogType.SELECTION,
     content: '짝꿍은...?',
     selection: ['안경을 쓰고 책을 보고 있다.', '별 생각없이 창 밖을 보고 있다.', '엎드려서 자고 있다.'],
-    next: [week1Level2Selection10, week1Level2Selection11, week1Level2Selection12]
+    next: [week1Level2Selection10, week1Level2Selection11, week1Level2Selection12],
+    progress: 40
   }
 ]
 
@@ -214,7 +217,8 @@ const week1Level2: Array<IDialog> = [
     type: EDialogType.SELECTION,
     content: '통에 있는 번호를 뽑는다.',
     selection: ['앞자리였다.', '중간자리였다.', '뒤쪽 창가자리였다.'],
-    next: [week1Level2Selection0, week1Level2Selection1, week1Level2Selection2]
+    next: [week1Level2Selection0, week1Level2Selection1, week1Level2Selection2],
+    progress: 20
   }
 ]
 
