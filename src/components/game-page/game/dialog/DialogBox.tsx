@@ -5,6 +5,7 @@ import * as style from './Dialog.style'
 import DialogBackground from './DialogBackground'
 import { IDialog } from '../../../../types/IDialogs'
 import useModal from '../../../../hooks/useModal'
+import { useToastStore } from '../../../../states/useToastStore'
 
 const DialogBox = ({
   level,
@@ -22,10 +23,7 @@ const DialogBox = ({
   setImages: React.Dispatch<React.SetStateAction<[string, string]>>
 }) => {
   const { isOpen, openModal, closeModal, setIsOpen } = useModal()
-
-  // useEffect(() => {
-
-  // }, [week, level])
+  const { openToast } = useToastStore()
 
   const handleOnClick = () => {
     if (currLevel[0].type === 'SELECTION') {
@@ -40,6 +38,7 @@ const DialogBox = ({
     }
     if (currLevel.length === 1) {
       updateProgress(level, 100)
+      openToast('다 학습했어요. 다음 단계로 버튼을 눌러주세요.', 'info')
       return
     }
     setCurrLevel((prev) => {

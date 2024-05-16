@@ -1,10 +1,9 @@
 import { Avatar, Divider, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Grid from '@mui/system/Unstable_Grid/Grid'
 import { levelList } from '../../const/LevelList'
 import { ILevel, ISubLevel } from '../../types/ILevels'
 import BorderLinearProgress from '../BorderLinearProgress'
-import Database from '../../service/database'
 import { IProgress } from '../../types/IProgress'
 
 const SubCourseInfo = ({ subLevel, progress }: { subLevel: ISubLevel; progress: number }) => {
@@ -83,21 +82,7 @@ const Course = ({ level, progress }: { level: ILevel; progress: [number, number,
   )
 }
 
-const CourseList = ({ database, displayName }: { database: Database; displayName: string }) => {
-  const [isLoading, setIsLoading] = useState(false)
-  const [progress, setProgress] = useState<IProgress | null>(null)
-
-  useEffect(() => {
-    setIsLoading(true)
-    const fetchData = async () => {
-      await database.getProgress(displayName).then((data) => setProgress(data))
-      setIsLoading(false)
-    }
-    if (!isLoading) fetchData()
-  }, [])
-
-  if (!progress) return null
-
+const CourseList = ({ progress }: { progress: IProgress }) => {
   return (
     <Stack direction={'column'} spacing={7}>
       <Typography variant={'Title3Emphasis'}>수강 과목</Typography>

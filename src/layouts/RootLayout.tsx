@@ -4,8 +4,12 @@ import Nav from '../components/Nav'
 import Logo from '../components/Logo'
 import Footer from '../components/Footer'
 import Auth from '../service/auth'
+import Toast from '../components/Toast'
+import { useToastStore } from '../states/useToastStore'
 
 const RootLayout = ({ children, auth }: { children: React.ReactNode; auth: Auth }) => {
+  const { toast, closeToast } = useToastStore()
+
   return (
     <>
       <Container
@@ -22,6 +26,8 @@ const RootLayout = ({ children, auth }: { children: React.ReactNode; auth: Auth 
         </Stack>
       </Container>
       <Footer />
+      {/* eslint-disable-next-line */}
+      <Toast {...toast} handleClose={closeToast} />
     </>
   )
 }

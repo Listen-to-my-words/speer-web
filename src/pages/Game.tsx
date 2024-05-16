@@ -12,6 +12,7 @@ import Database from '../service/database'
 import { IProgress } from '../types/IProgress'
 import { IDialog } from '../types/IDialogs'
 import { dialogList } from '../const/DialogList'
+import { useToastStore } from '../states/useToastStore'
 
 const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
   const { week, level: currLevel } = useParams()
@@ -24,11 +25,14 @@ const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
   const [isLoading, setIsLoading] = useState(false)
   const [progress, setProgress] = useState<IProgress | null>(null)
 
+  const { openToast } = useToastStore()
+
   useEffect(() => {
     const fetchData = async (displayName: string) => {
       await database.getProgress(displayName).then((data) => setProgress(data))
       setIsLoading(false)
     }
+
     if (!profile) {
       auth.onAuthChange((user) => {
         if (user) {
@@ -40,6 +44,7 @@ const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
           setIsLoading(true)
           if (!isLoading) fetchData(user.displayName)
         } else {
+          openToast('로그인이 필요해요.', 'error')
           navigate('/')
         }
       })
