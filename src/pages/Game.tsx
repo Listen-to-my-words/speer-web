@@ -48,7 +48,10 @@ const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
           navigate('/')
         }
       })
-    } else if (!isLoading) fetchData(profile.displayName)
+    } else if (!isLoading) {
+      setIsLoading(true)
+      fetchData(profile.displayName)
+    }
   }, [])
 
   useEffect(() => {
