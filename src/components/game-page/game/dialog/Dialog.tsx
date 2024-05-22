@@ -36,11 +36,30 @@ const Dialog = ({
   if (currDialog.type === EDialogType.CHANGE_IMAGE) {
     return null
   }
-  console.log(`isOpen: ${isOpen}`)
+
+  const name = currDialog.name ?? currDialog.type === EDialogType.SEONG_JANG ? '성장이' : '영원이'
 
   return (
     <>
       <Box sx={style.dialogStyle}>
+        <Typography
+          variant={'Body2'}
+          color={'#fff'}
+          fontWeight={500}
+          sx={{
+            display: name ? 'block' : 'none',
+            position: 'absolute',
+            top: '0.5rem',
+            left: '1rem',
+            zIndex: 300,
+            backgroundColor: '#FFB762',
+            borderRadius: '0.5rem',
+            padding: '0.2rem 0.5rem',
+            transform: 'translateY(-75%)'
+          }}
+        >
+          {name}
+        </Typography>
         <Typography variant={'Body2'} sx={style.dialogTextStyle}>
           {currDialog.content}
         </Typography>

@@ -41,7 +41,7 @@ const Subtitle = ({ week, currLevel }: { week: number; currLevel: number }) => {
           {levelList[week - 1].subLevels[currLevel - 1].title}
         </Typography>
         <Typography
-          variant={'Title2Emphasis'}
+          variant={'Title3Emphasis'}
         >{`${week}주차 - ${levelList[week - 1].title} (${currLevel})`}</Typography>
         <Typography variant={'Subtitle2'} sx={{ px: [0, 2] }}>
           {levelList[week - 1].subLevels[currLevel - 1].title}

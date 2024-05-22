@@ -56,7 +56,7 @@ const race: Array<IDialog> = [
   },
   {
     type: EDialogType.DIALOG,
-    content: '2인3각 중'
+    content: '경기가 시작되었다. 성장이와 영원이는 열심히 뛰었다.'
   }
 ]
 
@@ -115,7 +115,7 @@ const week2Level2: Array<IDialog> = [
   },
   {
     type: EDialogType.SELECTION,
-    content: 'a1 : 영원이와 우리 반 2인3각 대표로 나간다. a2 : 열심히 응원한다.',
+    content: '영원이와 우리 반 2인3각 대표로 나갈까? 아니면 열심히 응원할까?',
     selection: ['영원이와 우리 반 2인3각 대표로 나간다.', '열심히 응원한다.'],
     next: [chooseToRace, cheer],
     progress: 60

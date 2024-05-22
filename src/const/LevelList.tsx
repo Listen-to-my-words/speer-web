@@ -23,19 +23,19 @@ const levelList: [ILevel, ILevel, ILevel, ILevel] = [
   {
     image: '/images/02_week_thumbnail.png',
     week: 2,
-    title: '2주차',
+    title: '성장이의 학교 생활',
     subLevels: [
       {
         level: 1,
-        title: '1단계'
+        title: '준비물 사기'
       },
       {
         level: 2,
-        title: '2단계'
+        title: '체육대회 준비하기'
       },
       {
         level: 3,
-        title: '3단계'
+        title: '체육대회 참가하기'
       }
     ]
   },
