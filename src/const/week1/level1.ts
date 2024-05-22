@@ -60,7 +60,7 @@ const week1Level1Select1: Array<IDialog> = [
 const week1Level1: Array<IDialog> = [
   {
     type: EDialogType.CHANGE_IMAGE,
-    content: 'https://picsum.photos/id/25/200/300'
+    content: '/images/background/교실 책상.jpg'
   },
   {
     type: EDialogType.DIALOG,
@@ -71,8 +71,8 @@ const week1Level1: Array<IDialog> = [
     content: '어디에 앉지?'
   },
   {
-    type: EDialogType.CHANGE_IMAGE,
-    content: 'https://picsum.photos/id/10/200/300'
+    type: EDialogType.DIALOG,
+    content: '...'
   },
   {
     type: EDialogType.DIALOG,

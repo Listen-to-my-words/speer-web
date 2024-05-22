@@ -33,6 +33,11 @@ const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
       setIsLoading(false)
     }
 
+    if (Number(week) > 2) {
+      openToast('아직 열리지 않은 레벨이에요.', 'error')
+      navigate(`/`)
+    }
+
     if (!profile) {
       auth.onAuthChange((user) => {
         if (user) {

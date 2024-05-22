@@ -1,90 +1,86 @@
 import { IDialog, EDialogType } from '../../types/IDialogs'
 
-const week1Level1Select0: Array<IDialog> = [
+const hobbySelection1: Array<IDialog> = [
   {
-    type: EDialogType.DIALOG,
-    content: '용기내서 말을 걸어보자'
-  },
-  {
-    type: EDialogType.SEONG_JANG,
-    content: '안녕 반가워 너는 이름이 뭐야?'
+    type: EDialogType.YOUNG_WON,
+    content: '난 그림 그리는 걸 좋아해. 그 중에서 동물 그림 그리는 게 제일 재밌어.'
   },
   {
     type: EDialogType.YOUNG_WON,
-    content: '나는 영원이야. 네 이름은 뭐야?'
+    content: '내 취미도 알려 줄게. 나는 아이돌 춤 추는 걸 좋아해.'
   },
   {
     type: EDialogType.SEONG_JANG,
-    content: '나는 성장이야. 여기 간식 먹을래?'
+    content: '우와 멋지다. 다음에 춤 추는 거 보여주라.'
   },
   {
     type: EDialogType.YOUNG_WON,
-    content: '고마워! 잘 먹을게'
-  },
-  {
-    type: EDialogType.SEONG_JANG,
-    content: '우리 앞으로 친하게 지내자'
+    content: '좋아! 약속할게.'
   }
 ]
 
-const week1Level1Select1: Array<IDialog> = [
+const hobbySelection2: Array<IDialog> = [
   {
-    type: EDialogType.DIALOG,
-    content: '너무 긴장 돼. 일단 가만히 있어보자.'
+    type: EDialogType.YOUNG_WON,
+    content: '난 운동을 좋아해. 그 중에서 축구를 가장 좋아해.'
   },
   {
     type: EDialogType.YOUNG_WON,
-    content: '안녕, 만나서 반가워. 나는 영원이라고 해.'
+    content: '내 취미도 알려 줄게. 나는 아이돌 춤 추는 걸 좋아해.'
+  },
+  {
+    type: EDialogType.SEONG_JANG,
+    content: '우와 멋지다. 다음에 춤 추는 거 보여주라.'
   },
   {
     type: EDialogType.YOUNG_WON,
-    content: '네 이름은 뭐야?'
-  },
-  {
-    type: EDialogType.SEONG_JANG,
-    content: '안녕, 나는 성장이야.'
-  },
-  {
-    type: EDialogType.YOUNG_WON,
-    content: '내 옆자리 앉아줘서 고마워.'
-  },
-  {
-    type: EDialogType.SEONG_JANG,
-    content: '먼저 말 걸어줘서 고마워.'
-  },
-  {
-    type: EDialogType.SEONG_JANG,
-    content: '앞으로 친하게 지내자.'
+    content: '좋아! 약속할게.'
   }
 ]
-const week1Level1: Array<IDialog> = [
+
+const hobbySelection3: Array<IDialog> = [
+  {
+    type: EDialogType.YOUNG_WON,
+    content: '영화 보는 걸 좋아해. 그 중에서 로맨스 영화를 가장 좋아해.'
+  },
+  {
+    type: EDialogType.YOUNG_WON,
+    content: '내 취미도 알려 줄게. 나는 아이돌 춤 추는 걸 좋아해.'
+  },
+  {
+    type: EDialogType.SEONG_JANG,
+    content: '우와 멋지다. 다음에 춤 추는 거 보여주라.'
+  },
+  {
+    type: EDialogType.YOUNG_WON,
+    content: '좋아! 약속할게.'
+  }
+]
+
+const week1Level3: Array<IDialog> = [
   {
     type: EDialogType.CHANGE_IMAGE,
-    content: 'https://picsum.photos/id/25/200/300'
+    content: '/images/background/classroom backboard.jpg'
   },
   {
-    type: EDialogType.DIALOG,
-    content: '오늘은 등교 첫날이다.'
+    type: EDialogType.SEONG_JANG,
+    content: '성장아! 같이 하교하자. 집까지 얼마나 걸려?'
   },
   {
-    type: EDialogType.DIALOG,
-    content: '어디에 앉지?'
+    type: EDialogType.YOUNG_WON,
+    content: '정문에서 왼쪽으로 돌면 금방이야.'
   },
   {
-    type: EDialogType.CHANGE_IMAGE,
-    content: 'https://picsum.photos/id/10/200/300'
-  },
-  {
-    type: EDialogType.DIALOG,
-    content: '어, 저기 자리가 비워져있네 옆자리 앉아야겠다'
+    type: EDialogType.SEONG_JANG,
+    content: '나랑 같은 방향이구나! 같이 가자! 영원이는 집에 가서 자유 시간을 어떻게 보내?'
   },
   {
     type: EDialogType.SELECTION,
-    content: '어떻게 말을 걸까?',
-    selection: ['앉는다', '앉지 않는다'],
-    next: [week1Level1Select0, week1Level1Select1],
-    progress: 50
+    content: '취미가 뭐야?',
+    selection: ['그림 그리기', '운동하기', '영화 보기'],
+    next: [hobbySelection1, hobbySelection2, hobbySelection3],
+    progress: 60
   }
 ]
 
-export default week1Level1
+export default week1Level3

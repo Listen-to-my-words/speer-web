@@ -1,21 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Stack, Typography, IconButton } from '@mui/material'
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import { useNavigate } from 'react-router-dom'
 import { levelList } from '../../../const/LevelList'
-import { useToastStore } from '../../../states/useToastStore'
 
 const Subtitle = ({ week, currLevel }: { week: number; currLevel: number }) => {
   const navigator = useNavigate()
-  const { openToast } = useToastStore()
-
-  useEffect(() => {
-    if (week !== 1) {
-      openToast('아직 열리지 않은 레벨이에요.', 'error')
-      navigator(`/`)
-    }
-  }, [week, navigator])
 
   const handleNavBeforeClick = (week: number, subLevel: number) => {
     const beforeLevel = subLevel === 1 ? 3 : subLevel - 1

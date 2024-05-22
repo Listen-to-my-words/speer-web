@@ -193,7 +193,7 @@ const week1Level2Selection1 = [
 const week1Level2Selection2 = [
   {
     type: EDialogType.CHANGE_IMAGE,
-    content: 'https://picsum.photos/id/25/200/300'
+    content: '/images/background/교실 책상.jpg'
   },
   {
     type: EDialogType.DIALOG,
@@ -203,6 +203,10 @@ const week1Level2Selection2 = [
 ]
 
 const week1Level2: Array<IDialog> = [
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/classroom backboard.jpg'
+  },
   {
     type: EDialogType.OTHER,
     name: '선생님',

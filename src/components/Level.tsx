@@ -47,7 +47,7 @@ const Level = ({ level }: { level: ILevel }) => {
           color: 'black'
         }}
         onClick={openModal}
-        disabled={level.week !== 1}
+        disabled={level.week > 2}
       >
         <Box
           sx={{

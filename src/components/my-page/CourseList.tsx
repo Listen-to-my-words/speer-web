@@ -81,7 +81,6 @@ const Course = ({ level, progress }: { level: ILevel; progress: [number, number,
 }
 
 const CourseList = ({ progress }: { progress: IProgress }) => {
-  console.log(progress)
   if (!progress) return null
   return (
     <Stack direction={'column'} spacing={7}>
