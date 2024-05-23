@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Box, Button, Stack, Typography } from '@mui/material'
+import Grid from '@mui/material/Unstable_Grid2'
 import { IQuiz } from '../../../../types/IQuiz'
 import DialogBackground from './DialogBackground'
 import * as style from './Dialog.style'
@@ -64,48 +65,56 @@ const QuizBox = ({ quiz, setQuiz }: { quiz: IQuiz[]; setQuiz: React.Dispatch<Rea
           {display === 0 && (
             <Stack
               direction={'column'}
-              justifyContent={'center'}
+              justifyContent={'space-between'}
               alignItems={'center'}
               sx={{
                 width: '100%',
-                height: '100%'
+                height: '100%',
+                p: ['1rem', '2rem'],
+                pb: ['2rem', '4rem'],
+                boxSizing: 'border-box'
               }}
             >
               <Typography
                 variant={'Title2Emphasis'}
                 sx={{
                   zIndex: 350,
-                  height: '50%'
+                  height: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexGrow: 1
                 }}
+                align={'center'}
                 fontFamily={'SOYOMapleBoldTTF'}
               >
                 {quiz[0].question}
               </Typography>
-              <Stack
-                direction={'row'}
+              <Grid
+                container
                 spacing={2}
-                width={1}
                 sx={{
                   zIndex: 350
                 }}
-                justifyContent={'center'}
               >
                 {quiz[0].options.map((option, index) => (
-                  <Button
-                    key={option}
-                    onClick={onAnswerClick(index)}
-                    variant={'contained'}
-                    sx={{
-                      height: '2.5rem',
-                      borderRadius: '0.5rem'
-                    }}
-                  >
-                    <Typography variant={'Body2'} fontFamily={'SOYOMapleBoldTTF'}>
-                      {option}
-                    </Typography>
-                  </Button>
+                  <Grid>
+                    <Button
+                      key={option}
+                      onClick={onAnswerClick(index)}
+                      variant={'contained'}
+                      sx={{
+                        height: '2.5rem',
+                        borderRadius: '0.5rem'
+                      }}
+                    >
+                      <Typography variant={'Body2'} fontFamily={'SOYOMapleBoldTTF'}>
+                        {option}
+                      </Typography>
+                    </Button>
+                  </Grid>
                 ))}
-              </Stack>
+              </Grid>
             </Stack>
           )}
           {display === 1 && (
