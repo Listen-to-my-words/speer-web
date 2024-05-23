@@ -125,12 +125,7 @@ const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
       ) : (
         <QuizBox quiz={quiz} setQuiz={setQuiz} />
       )}
-      <NavButtons
-        week={Number(week)}
-        level={Number(currLevel)}
-        setCurrLevel={setSubLevel}
-        isQuiz={currLevel === 'quiz'}
-      />
+      <NavButtons week={Number(week)} level={Number(currLevel)} isQuiz={currLevel === 'quiz'} />
       <Typography variant={'Title3Emphasis'}>목록</Typography>
       {isLoading ? (
         <CircularProgress />

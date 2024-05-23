@@ -14,8 +14,6 @@ const Dialog = ({
   isOpen: boolean
   handleSelection: (index: number) => void
 }) => {
-  // const [, set] = useState();
-
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {

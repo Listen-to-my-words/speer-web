@@ -9,14 +9,20 @@ const Subtitle = ({ week, currLevel, isQuiz }: { week: number; currLevel?: numbe
   const navigator = useNavigate()
 
   const handleNavBeforeClick = (week: number, subLevel: number) => {
-    const beforeLevel = subLevel === 1 ? 3 : subLevel - 1
+    const beforeLevel = subLevel === 1 ? 'quiz' : subLevel - 1
     const beforeWeek = beforeLevel === 3 ? week - 1 : week
+    if (isQuiz) {
+      return () => navigator(`/game/${beforeWeek}/3`)
+    }
     return () => navigator(`/game/${beforeWeek}/${beforeLevel}`)
   }
 
   const handleNavNextClick = (week: number, subLevel: number) => {
-    const nextLevel = subLevel === 3 ? 1 : subLevel + 1
+    const nextLevel = subLevel === 3 ? 'quiz' : subLevel + 1
     const nextWeek = nextLevel === 1 ? week + 1 : week
+    if (isQuiz) {
+      return () => navigator(`/game/${week + 1}/1`)
+    }
     return () => navigator(`/game/${nextWeek}/${nextLevel}`)
   }
 
