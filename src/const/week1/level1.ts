@@ -60,7 +60,7 @@ const week1Level1Select1: Array<IDialog> = [
 const week1Level1: Array<IDialog> = [
   {
     type: EDialogType.CHANGE_IMAGE,
-    content: '/images/background/교실 책상.jpg'
+    content: '/images/background/classroom backboard.jpg'
   },
   {
     type: EDialogType.DIALOG,

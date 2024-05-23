@@ -77,6 +77,7 @@ const QuizBox = ({ quiz, setQuiz }: { quiz: IQuiz[]; setQuiz: React.Dispatch<Rea
                   zIndex: 350,
                   height: '50%'
                 }}
+                fontFamily={'SOYOMapleBoldTTF'}
               >
                 {quiz[0].question}
               </Typography>
@@ -93,12 +94,15 @@ const QuizBox = ({ quiz, setQuiz }: { quiz: IQuiz[]; setQuiz: React.Dispatch<Rea
                   <Button
                     key={option}
                     onClick={onAnswerClick(index)}
+                    variant={'contained'}
                     sx={{
-                      height: '3rem',
+                      height: '2.5rem',
                       borderRadius: '0.5rem'
                     }}
                   >
-                    <Typography variant={'Body2'}>{option}</Typography>
+                    <Typography variant={'Body2'} fontFamily={'SOYOMapleBoldTTF'}>
+                      {option}
+                    </Typography>
                   </Button>
                 ))}
               </Stack>
@@ -111,6 +115,7 @@ const QuizBox = ({ quiz, setQuiz }: { quiz: IQuiz[]; setQuiz: React.Dispatch<Rea
                 sx={{
                   zIndex: 350
                 }}
+                fontFamily={'SOYOMapleBoldTTF'}
               >
                 {userSelection === quiz[0].answer ? '정답입니다!' : '오답입니다!'}
               </Typography>

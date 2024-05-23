@@ -1,9 +1,24 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
 
+@font-face {
+  font-family: 'SOYOMapleBoldTTF';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Galmuri14';
+  src: url('./fonts/Galmuri14.woff2');
+  font-weight: 400;
+}
+
 body {
   margin: 0;
   font-family:
     'Pretendard Variable',
+    'SOYO Maple Bold',
+    'Galmuri14',
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',

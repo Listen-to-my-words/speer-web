@@ -69,7 +69,7 @@ const Dialog = ({
         >
           {name}
         </Typography>
-        <Typography variant={'Body2'} sx={style.dialogTextStyle}>
+        <Typography variant={'Body2'} sx={style.dialogTextStyle} fontFamily={'Galmuri14'}>
           {currDialog.content}
         </Typography>
         <ArrowDropDownIcon sx={style.arrowStyle} fontSize={'large'} />
@@ -126,7 +126,7 @@ const Dialog = ({
                       backgroundColor: '#fff'
                     }}
                   >
-                    <Typography variant={'Body2'} color={'text.primary'}>
+                    <Typography variant={'Body2'} color={'text.primary'} fontFamily={'Galmuri14'}>
                       {selection}
                     </Typography>
                   </Button>
