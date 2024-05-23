@@ -22,13 +22,13 @@ const QuizBox = ({ quiz, setQuiz }: { quiz: IQuiz[]; setQuiz: React.Dispatch<Rea
         setDisplay(0)
         return
       }
-      openToast('모든 퀴즈를 풀었습니다.', 'info')
+      openToast('모든 퀴즈를 풀었어요.', 'info')
       return
     }
     if (images[0] === '/images/background/quizStart.svg') {
       setImages(['/images/background/blackboard.png', ''])
       setDisplay(0)
-    } else {
+    } else if (display === 1) {
       setDisplay(0)
       setQuiz((prev) => {
         if (prev[0].answer === userSelection) {

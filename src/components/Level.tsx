@@ -6,32 +6,62 @@ import { motion } from 'framer-motion'
 import { ILevel } from '../types/ILevels'
 import useModal from '../hooks/useModal'
 
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2
+    }
+  }
+}
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+}
+
+const LevelButton = ({ title, onClick }: { title: string; onClick: () => void }) => {
+  return (
+    <Grid
+      xs={6}
+      sx={{
+        height: 'calc((100vw - 3rem) / 2)',
+        maxHeight: '15rem',
+        padding: '0.5rem'
+      }}
+      component={motion.div}
+      variants={item}
+    >
+      <Button
+        sx={{
+          backgroundColor: 'lightgray',
+          borderRadius: '0.5rem',
+          width: '100%',
+          height: '100%',
+          p: 0
+        }}
+        onClick={onClick}
+      >
+        <Typography variant={'Subtitle2'} align={'center'} width={1} color={'text.primary'}>
+          {title}
+        </Typography>
+      </Button>
+    </Grid>
+  )
+}
+
 const Level = ({ level }: { level: ILevel }) => {
   const { Modal, isOpen, openModal, closeModal } = useModal()
   const navigator = useNavigate()
 
   const handleLevelClick = (week: number, subLevel: number) => {
-    return () => navigator(`/game/${week}/${subLevel}`)
-  }
-
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
-  }
-
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
+    return () => navigator(`/game/${week}/${subLevel || 'quiz'}`)
   }
 
   return (
@@ -86,36 +116,13 @@ const Level = ({ level }: { level: ILevel }) => {
         >
           <Grid container width={1} component={motion.div} variants={container} initial={'hidden'} animate={'visible'}>
             {level.subLevels.map((subLevel) => (
-              <Grid
-                xs={6}
-                key={subLevel.level}
-                sx={{
-                  height: 'calc((100vw - 3rem) / 2)',
-                  maxHeight: '15rem',
-                  padding: '0.5rem'
-                }}
-                component={motion.div}
-                variants={item}
-              >
-                <Button
-                  sx={{
-                    backgroundColor: 'lightgray',
-                    borderRadius: '0.5rem',
-                    width: '100%',
-                    height: '100%',
-                    p: 0
-                  }}
-                  onClick={handleLevelClick(level.week, subLevel.level)}
-                >
-                  <Typography
-                    variant={'Subtitle2'}
-                    align={'center'}
-                    width={1}
-                    color={'text.primary'}
-                  >{`${subLevel.title}`}</Typography>
-                </Button>
-              </Grid>
+              <LevelButton
+                key={subLevel.title}
+                title={subLevel.title}
+                onClick={handleLevelClick(level.week, subLevel.level)}
+              />
             ))}
+            <LevelButton title={'퀴즈'} onClick={handleLevelClick(level.week, 0)} />
           </Grid>
         </Paper>
       </Modal>
