@@ -14,6 +14,8 @@ const Dialog = ({
   isOpen: boolean
   handleSelection: (index: number) => void
 }) => {
+  // const [, set] = useState();
+
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -37,7 +39,14 @@ const Dialog = ({
     return null
   }
 
-  const name = currDialog.name ?? currDialog.type === EDialogType.SEONG_JANG ? '성장이' : '영원이'
+  let name = ''
+  if (currDialog.name) {
+    name = currDialog.name
+  } else if (currDialog.type === EDialogType.SEONG_JANG) {
+    name = '성장이'
+  } else if (currDialog.type === EDialogType.YOUNG_WON) {
+    name = '영원이'
+  }
 
   return (
     <>

@@ -14,11 +14,13 @@ const navButtonsStyle: SxProps = {
 const NavButtons = ({
   week,
   level,
-  setCurrLevel
+  setCurrLevel,
+  isQuiz
 }: {
   week: number
   level: number
   setCurrLevel: React.Dispatch<React.SetStateAction<IDialog[]>>
+  isQuiz: boolean
 }) => {
   const navigator = useNavigate()
 
@@ -31,6 +33,9 @@ const NavButtons = ({
   const handleNavNextClick = (week: number, subLevel: number) => {
     const nextLevel = subLevel === 3 ? 1 : subLevel + 1
     const nextWeek = nextLevel === 1 ? week + 1 : week
+    if (isQuiz) {
+      return () => navigator(`/game/${week + 1}/1`)
+    }
     return () => navigator(`/game/${nextWeek}/${nextLevel}`)
   }
 

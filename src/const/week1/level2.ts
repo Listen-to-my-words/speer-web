@@ -2,23 +2,22 @@ import { IDialog, EDialogType } from '../../types/IDialogs'
 
 const week1Level2Selection31 = [
   {
-    type: EDialogType.YOUNG_WON,
+    type: EDialogType.SEONG_JANG,
     content: '저기 혹시.. 내가 오늘 필통을 두고 와서 그러는데 연필과 지우개를 빌릴 수 있을까?'
   },
   {
-    type: EDialogType.OTHER,
-    name: '짝꿍',
+    type: EDialogType.YOUNG_WON,
     content: '그래. 대신 이따가 화장실 같이 가자.'
   },
   {
-    type: EDialogType.YOUNG_WON,
+    type: EDialogType.SEONG_JANG,
     content: '응 그래 그러자.'
   }
 ]
 
 const week1Level2Selection30 = [
   {
-    type: EDialogType.YOUNG_WON,
+    type: EDialogType.SEONG_JANG,
     content: '저기 혹시.. 내가 오늘 필통을 두고 와서 그러는데 연필과 지우개를 빌릴 수 있을까?'
   },
   {

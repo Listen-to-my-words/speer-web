@@ -5,7 +5,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 import { useNavigate } from 'react-router-dom'
 import { levelList } from '../../../const/LevelList'
 
-const Subtitle = ({ week, currLevel }: { week: number; currLevel: number }) => {
+const Subtitle = ({ week, currLevel, isQuiz }: { week: number; currLevel?: number; isQuiz: boolean }) => {
   const navigator = useNavigate()
 
   const handleNavBeforeClick = (week: number, subLevel: number) => {
@@ -38,13 +38,13 @@ const Subtitle = ({ week, currLevel }: { week: number; currLevel: number }) => {
         alignItems={'center'}
       >
         <Typography variant={'Subtitle2'} sx={{ px: [0, 2], opacity: 0, display: ['none', 'block'] }} aria-hidden>
-          {levelList[week - 1].subLevels[currLevel - 1].title}
+          {isQuiz ? `${week}주차 퀴즈` : levelList[week - 1].subLevels[currLevel - 1].title}
         </Typography>
         <Typography
           variant={'Title3Emphasis'}
-        >{`${week}주차 - ${levelList[week - 1].title} (${currLevel})`}</Typography>
+        >{`${week}주차 - ${levelList[week - 1].title} (${currLevel || '퀴즈'})`}</Typography>
         <Typography variant={'Subtitle2'} sx={{ px: [0, 2] }}>
-          {levelList[week - 1].subLevels[currLevel - 1].title}
+          {isQuiz ? `${week}주차 퀴즈` : levelList[week - 1].subLevels[currLevel - 1].title}
         </Typography>
       </Stack>
       <IconButton onClick={handleNavNextClick(week, currLevel)} disabled={week === 4 && currLevel === 3}>

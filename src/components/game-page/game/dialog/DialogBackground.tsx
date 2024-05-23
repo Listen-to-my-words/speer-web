@@ -2,7 +2,6 @@ import React from 'react'
 import { Box } from '@mui/material'
 import { motion, AnimatePresence } from 'framer-motion'
 import * as style from './Dialog.style'
-// import { EDialogType, IDialog } from '../../../../types/IDialogs'
 
 const DialogBackground = ({ images }: { images: [string, string] }) => {
   return (
@@ -14,6 +13,7 @@ const DialogBackground = ({ images }: { images: [string, string] }) => {
             <Box
               sx={{
                 ...style.dialogBoxSizeStyle,
+                objectFit: 'cover',
                 zIndex: 50 - index,
                 position: 'absolute',
                 top: 0,

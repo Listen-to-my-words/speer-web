@@ -13,10 +13,14 @@ import { IProgress } from '../types/IProgress'
 import { IDialog } from '../types/IDialogs'
 import { dialogList } from '../const/DialogList'
 import { useToastStore } from '../states/useToastStore'
+import QuizBox from '../components/game-page/game/dialog/QuizBox'
+import quizList from '../const/QuizList'
+import { IQuiz } from '../types/IQuiz'
 
 const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
   const { week, level: currLevel } = useParams()
-  const [subLevel, setSubLevel] = useState<IDialog[]>(dialogList[Number(week) - 1][Number(currLevel) - 1].slice(1))
+  const [quiz, setQuiz] = useState([] as IQuiz[])
+  const [subLevel, setSubLevel] = useState<IDialog[]>([] as IDialog[])
   const [images, setImages] = useState<[string, string]>(['', ''])
 
   const { profile, setProfile } = useProfileStore()
@@ -33,9 +37,12 @@ const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
       setIsLoading(false)
     }
 
-    if (Number(week) > 2) {
-      openToast('아직 열리지 않은 레벨이에요.', 'error')
-      navigate(`/`)
+    if (Number(week) < 1 || Number(week) > 2 || Number(currLevel) < 1 || Number(currLevel) > 3) {
+      if (currLevel !== 'quiz') {
+        openToast('아직 열리지 않은 레벨이거나 없는 레벨이에요.', 'error')
+        navigate(`/`)
+        return
+      }
     }
 
     if (!profile) {
@@ -60,6 +67,13 @@ const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
   }, [])
 
   useEffect(() => {
+    if (Number(week) < 1 || Number(week) > 2 || Number(currLevel) < 1 || Number(currLevel) > 3) {
+      return
+    }
+    if (currLevel === 'quiz') {
+      setQuiz(quizList[Number(week) - 1])
+      return
+    }
     setSubLevel(() => {
       const currDialog = dialogList[Number(week) - 1][Number(currLevel) - 1]
       const currImage = dialogList[Number(week) - 1][Number(currLevel) - 1][0]
@@ -88,18 +102,35 @@ const Game = ({ auth, database }: { auth: Auth; database: Database }) => {
     database.setProgress(profile.displayName, newProgress)
   }
 
+  if (Number(week) < 1 || Number(week) > 2 || Number(currLevel) < 1 || Number(currLevel) > 3) {
+    return null
+  }
+
   return (
     <Stack spacing={4}>
-      <Subtitle week={Number(week)} currLevel={Number(currLevel)} />
-      <DialogBox
-        level={Number(currLevel)}
-        currLevel={subLevel}
-        setCurrLevel={setSubLevel}
-        updateProgress={updateProgress}
-        images={images}
-        setImages={setImages}
+      <Subtitle
+        week={Number(week)}
+        currLevel={currLevel !== 'quiz' ? Number(currLevel) : undefined}
+        isQuiz={currLevel === 'quiz'}
       />
-      <NavButtons week={Number(week)} level={Number(currLevel)} setCurrLevel={setSubLevel} />
+      {currLevel !== 'quiz' ? (
+        <DialogBox
+          level={Number(currLevel)}
+          currLevel={subLevel}
+          setCurrLevel={setSubLevel}
+          updateProgress={updateProgress}
+          images={images}
+          setImages={setImages}
+        />
+      ) : (
+        <QuizBox quiz={quiz} setQuiz={setQuiz} />
+      )}
+      <NavButtons
+        week={Number(week)}
+        level={Number(currLevel)}
+        setCurrLevel={setSubLevel}
+        isQuiz={currLevel === 'quiz'}
+      />
       <Typography variant={'Title3Emphasis'}>목록</Typography>
       {isLoading ? (
         <CircularProgress />
