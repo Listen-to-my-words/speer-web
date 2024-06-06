@@ -57,7 +57,7 @@ const DialogBox = ({
     updateProgress(level, currLevel[0].progress || 0)
     setCurrLevel((prev) => {
       closeModal()
-      return prev[0]?.next[index] || ([] as IDialog[])
+      return [...prev[0]?.next[index], ...prev.slice(1)] || ([] as IDialog[])
     })
     setIsOpen(false)
   }
