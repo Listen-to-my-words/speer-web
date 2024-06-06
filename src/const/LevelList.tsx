@@ -1,6 +1,6 @@
 import { ILevel } from '../types/ILevels'
 
-const levelList: [ILevel, ILevel, ILevel, ILevel] = [
+const levelList: [ILevel, ILevel] = [
   {
     image: '/images/01_week_thumbnail.png',
     week: 1,
@@ -36,44 +36,6 @@ const levelList: [ILevel, ILevel, ILevel, ILevel] = [
       {
         level: 3,
         title: '체육대회 참가하기'
-      }
-    ]
-  },
-  {
-    image: '/images/03_week_thumbnail.png',
-    week: 3,
-    title: '3주차',
-    subLevels: [
-      {
-        level: 1,
-        title: '1단계'
-      },
-      {
-        level: 2,
-        title: '2단계'
-      },
-      {
-        level: 3,
-        title: '3단계'
-      }
-    ]
-  },
-  {
-    image: '/images/04_week_thumbnail.png',
-    week: 4,
-    title: '4주차',
-    subLevels: [
-      {
-        level: 1,
-        title: '1단계'
-      },
-      {
-        level: 2,
-        title: '2단계'
-      },
-      {
-        level: 3,
-        title: '3단계'
       }
     ]
   }

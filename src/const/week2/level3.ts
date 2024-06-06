@@ -36,14 +36,13 @@ const mainDialog: IDialog[] = [
   },
   {
     type: EDialogType.OTHER,
-    content:
-      '이상한 반을 만들겠습니다. (ex. 제가 반장이 된다면 우리 반 친구들이 수업시간에도 놀 수 있는 시간을 만들겠습니다.)',
-    name: 'C'
+    content: '이상한 반을 만들겠습니다.',
+    name: '짝꿍이'
   },
   {
     type: EDialogType.OTHER,
     content: '성장이는 반장이 되면 어떤 반을 만들지 얘기해줄래?',
-    name: 'C'
+    name: '선생님'
   },
   {
     type: EDialogType.SELECTION,

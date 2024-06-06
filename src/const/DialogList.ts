@@ -7,7 +7,5 @@ export const weekList2: [Array<IDialog>, Array<IDialog>, Array<IDialog>] = [week
 
 export const dialogList: [
   [Array<IDialog>, Array<IDialog>, Array<IDialog>],
-  [Array<IDialog>, Array<IDialog>, Array<IDialog>],
-  [Array<IDialog>, Array<IDialog>, Array<IDialog>],
   [Array<IDialog>, Array<IDialog>, Array<IDialog>]
-] = [weekList1, weekList2, weekList1, weekList1]
+] = [weekList1, weekList2]
