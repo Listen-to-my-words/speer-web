@@ -10,7 +10,7 @@ import { useToastStore } from '../../../../states/useToastStore'
 
 const QuizBox = ({ quiz, setQuiz }: { quiz: IQuiz[]; setQuiz: React.Dispatch<React.SetStateAction<IQuiz[]>> }) => {
   const [images, setImages] = useState<[string, string]>([
-    '/images/background/quizStart.svg',
+    '/images/background/quizStart.png',
     '/images/background/blackboard.png'
   ])
   const [display, setDisplay] = useState<number>(-1)
