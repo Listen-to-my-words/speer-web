@@ -1,10 +1,11 @@
 # 스피어, 스스로 해요, 피하지 않고, 어렵지 않게
 
-<center>
+<div align=center>
 <img src="https://listen-to-my-words-speer.web.app/logo.png" width=300 />
-</center>
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FListen-to-my-words%2Fspeer-web&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
+</div>
 
 ## speer webpage 1.0
 
@@ -48,17 +49,18 @@ $ npm run start
 
 #### Environment
 
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+<div>
+<img display=inline-block src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img display=inline-block src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+</div>
 
 #### Frontend
 
-  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
-  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
-  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
-  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+<img display=inline-block src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
+<img display=inline-block src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
+<img display=inline-block src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
+<img display=inline-block src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
 
 #### Database
 
-  <img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white">
-  <br>
+<img display=inline-block src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white">
