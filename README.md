@@ -1,46 +1,64 @@
-# Getting Started with Create React App
+# 스피어, 스스로 해요, 피하지 않고, 어렵지 않게
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<center>
+<img src="https://listen-to-my-words-speer.web.app/logo.png" width=300 />
+</center>
 
-## Available Scripts
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FListen-to-my-words%2Fspeer-web&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-In the project directory, you can run:
+## speer webpage 1.0
 
-### `npm start`
+> 서울여자대학교 24년 봄 바롬종합설계프로젝트 21분반 2조 내말을들어조
+> 개발기간 24.5~6
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 배포 주소
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+배포 주소 : [https://listen-to-my-words-speer.web.app](https://listen-to-my-words-speer.web.app/)
 
-### `npm test`
+### 내말을들어조
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+바롬종합설계 프로젝트 21분반 2조
 
-### `npm run build`
+## 프로젝트 소개
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 스스로 해요, 피하지 않고, 어렵지 않게
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+본 서비스는
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Start Guide
 
-### `npm run eject`
+### Requirements
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+for building application, you need :
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Node.js 22.0.0
+- Npm 10.6.0
+- firebase 13.9.0
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Installation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```shell
+$ git clone git@github.com:Listen-to-my-words/speer-web.git
+$ cd speer-web
+$ npm install
+$ npm run start
+```
 
-## Learn More
+### Stacks
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Environment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
+
+#### Frontend
+
+  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
+  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
+  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
+  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+
+#### Database
+
+  <img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white">
+  <br>
