@@ -9,7 +9,7 @@
 
 ## speer webpage 1.0
 
-> 서울여자대학교 24년 봄 바롬종합설계프로젝트 21분반 2조 내말을들어조
+> 서울여자대학교 24년 봄 바롬종합설계프로젝트 21분반 2조 내말을들어조<br/>
 > 개발기간 24.5~6
 
 ### 배포 주소
@@ -56,10 +56,12 @@ $ npm run start
 
 #### Frontend
 
+<div>
 <img display=inline-block src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
 <img display=inline-block src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
 <img display=inline-block src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
 <img display=inline-block src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+</div>
 
 #### Database
 
