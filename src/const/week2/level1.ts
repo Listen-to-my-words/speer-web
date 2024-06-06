@@ -3,7 +3,19 @@ import { IDialog, EDialogType } from '../../types/IDialogs'
 const correctAnswer: IDialog[] = [
   {
     type: EDialogType.SEONG_JANG,
+    content: '...'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/School/SJ_ExMark.png'
+  },
+  {
+    type: EDialogType.SEONG_JANG,
     content: '아! 생각났다.'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Stationery/Ext_Note.png'
   },
   {
     type: EDialogType.SEONG_JANG,
@@ -13,6 +25,10 @@ const correctAnswer: IDialog[] = [
     type: EDialogType.OTHER,
     content: '공책은 한 권에 800원이고, 실내화 한 켤레는 2000원이야. 두 개 다 해서 2800원이란다.',
     name: '문방구 아주머니'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Stationery/SJ_GiveMoney.png'
   },
   {
     type: EDialogType.SEONG_JANG,
@@ -26,8 +42,16 @@ const incorrectAnswer: IDialog[] = [
     content: '헷갈리네.. 알림장을 확인해야겠다.'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/School/SJ_ExMark.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
     content: '맞아! 공책 한 권이랑 실내화 한 켤레를 사오라고 하셨었지.'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Stationery/Ext_Note.png'
   },
   {
     type: EDialogType.SEONG_JANG,
@@ -39,6 +63,10 @@ const incorrectAnswer: IDialog[] = [
     name: '문방구 아주머니'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Stationery/SJ_GiveMoney.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
     content: '여기요. 아주머니. 감사합니다.'
   }
@@ -46,9 +74,17 @@ const incorrectAnswer: IDialog[] = [
 
 const mainDialog: IDialog[] = [
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/CTB_Hi.png'
+  },
+  {
     type: EDialogType.OTHER,
     content: '내일 팀별로 필요한 준비물을 내일까지 사오도록 해요. 색연필과 공책 한 권을 사오면 돼요.',
     name: '선생님'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/JJ_SJ.png'
   },
   {
     type: EDialogType.OTHER,
@@ -72,8 +108,16 @@ const mainDialog: IDialog[] = [
     content: '천만에!'
   },
   {
+    type: EDialogType.DIALOG,
+    content: '(하교중...)'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/School/SJ_Question.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
-    content: '문구점에서 준비물을 사서 가야겠다. 어제 선생님께서 뭘 사오라고 하셨더라? 분명 색연필이랑..'
+    content: '문구점에서 준비물을 사서 가야겠다.\n선생님께서 뭘 사오라고 하셨더라? 분명 색연필이랑..'
   },
   {
     type: EDialogType.SELECTION,

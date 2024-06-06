@@ -57,7 +57,12 @@ const DialogBox = ({
     updateProgress(level, currLevel[0].progress || 0)
     setCurrLevel((prev) => {
       closeModal()
-      return [...prev[0]?.next[index], ...prev.slice(1)] || ([] as IDialog[])
+      // eslint-disable-next-line
+      const newCurrLevel = [...prev[0]?.next[index], ...prev.slice(1)] || ([] as IDialog[])
+      let nextImage: IDialog | string = newCurrLevel.find((dialog) => dialog.type === 'CHANGE_IMAGE')
+      nextImage = nextImage ? nextImage.content : ''
+      setImages((prev) => [prev[0], nextImage])
+      return newCurrLevel
     })
     setIsOpen(false)
   }

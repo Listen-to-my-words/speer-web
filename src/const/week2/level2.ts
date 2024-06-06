@@ -10,36 +10,66 @@ const sportsChoices: IDialog[] = [
         {
           type: EDialogType.SEONG_JANG,
           content: '내가 가장 잘하는 운동인 축구를 선택해야지!'
+        },
+        {
+          type: EDialogType.CHANGE_IMAGE,
+          content: '/images/background/2-2/05.png'
         }
       ],
       [
         {
           type: EDialogType.SEONG_JANG,
           content: '요즘 농구에 관심이 가니까 농구를 선택해야지!'
+        },
+
+        {
+          type: EDialogType.CHANGE_IMAGE,
+          content: '/images/background/2-2/06.png'
         }
       ],
       [
         {
           type: EDialogType.SEONG_JANG,
           content: '난 달리기에 자신이 있으니까 달리기를 선택해야지!'
+        },
+        {
+          type: EDialogType.CHANGE_IMAGE,
+          content: '/images/background/2-2/07.png'
         }
       ],
       [
         {
           type: EDialogType.SEONG_JANG,
           content: '멀리뛰기 한번도 해보지 않았지만 재밌어 보이네. 멀리뛰기 선택해야지!'
+        },
+
+        {
+          type: EDialogType.CHANGE_IMAGE,
+          content: '/images/background/2-2/08.png'
         }
       ]
     ],
     progress: 40
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/09.png'
+  },
+  {
     type: EDialogType.YOUNG_WON,
     content: '좋아. 나 자신 있어! 우리 열심히 해서 꼭 우승하자!'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/10.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
     content: '그래. 긴장되지만 너와 함께라면 할 수 있을 것 같아.'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/CT_Default.png'
   },
   {
     type: EDialogType.OTHER,
@@ -51,38 +81,86 @@ const sportsChoices: IDialog[] = [
 
 const injuryScenario: IDialog[] = [
   {
+    type: EDialogType.DIALOG,
+    content: '다음날'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/13.png'
+  },
+  {
     type: EDialogType.OTHER,
     content: '즐거운 체육대회 날이에요! 우리 모두 재밌게 즐겨보아요.',
     name: '선생님'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/14.png'
+  },
+  {
+    type: EDialogType.DIALOG,
+    content: '시작해보자.'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/15.png'
   },
   {
     type: EDialogType.SEONG_JANG,
     content: '우리 반! 이겨라! 파이팅! 할 수 있다!'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/16.png'
+  },
+  {
     type: EDialogType.DIALOG,
-    content: 'B가 넘어짐. 쿠당탕-'
+    content: '쿠당탕-'
+  },
+  {
+    type: EDialogType.DIALOG,
+    content: '영원이가 넘어졌다...!'
   },
   {
     type: EDialogType.DIALOG,
     content: '탁탁탁-'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/17.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
-    content: 'B야 괜찮아?!'
+    content: '영원아 괜찮아?!'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/18.png'
   },
   {
     type: EDialogType.YOUNG_WON,
     content: '아, 조금 피가 나긴하는데 크게 다친건 아니야 나 좀 도와줄래?'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/19.png'
+  },
+  {
     type: EDialogType.OTHER,
-    content: '성장아! 지금 B가 많이 다쳤는데 같이 보건실 같이 가줄래? 선생님은 반 친구들과 함께 있어야하니까',
-    name: '담임 선생님'
+    content: '성장아! 지금 영원이가 많이 다쳤는데 같이 보건실 같이 가줄래? 선생님은 반 친구들과 함께 있어야하니까',
+    name: '선생님'
   }
 ]
 
 const nurseScenario: IDialog[] = [
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/20.png'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '...'
+  },
   {
     type: EDialogType.DIALOG,
     content: '보건실 앞'
@@ -93,6 +171,22 @@ const nurseScenario: IDialog[] = [
     selection: ['노크를 한다.'],
     next: [
       [
+        {
+          type: EDialogType.DIALOG,
+          content: '...'
+        },
+        {
+          type: EDialogType.CHANGE_IMAGE,
+          content: '/images/background/2-2/21.png'
+        },
+        {
+          type: EDialogType.DIALOG,
+          content: '똑똑똑'
+        },
+        {
+          type: EDialogType.CHANGE_IMAGE,
+          content: '/images/background/2-2/22.png'
+        },
         {
           type: EDialogType.OTHER,
           content: '무슨일로 왔니?',
@@ -123,18 +217,34 @@ const nurseScenario: IDialog[] = [
     progress: 80
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/25.png'
+  },
+  {
     type: EDialogType.OTHER,
     content: '큰일이구나. 많이 아프지는 않니?',
     name: '보건실 선생님'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/26.png'
   },
   {
     type: EDialogType.YOUNG_WON,
     content: '넘어져서 다리와 팔이 아파요.'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/27.png'
+  },
+  {
     type: EDialogType.OTHER,
     content: '우선 간단하게 치료를 해줄테니 학교 끝나고 병원을 가보도록 하렴.',
     name: '보건실 선생님'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/26.png'
   },
   {
     type: EDialogType.YOUNG_WON,
@@ -145,6 +255,10 @@ const nurseScenario: IDialog[] = [
     content: '- 치료중 -'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/29.png'
+  },
+  {
     type: EDialogType.OTHER,
     content: '조심히 걸어가렴',
     name: '보건실 선생님'
@@ -152,6 +266,10 @@ const nurseScenario: IDialog[] = [
   {
     type: EDialogType.DIALOG,
     content: '드르륵 탁'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/29.png'
   },
   {
     type: EDialogType.YOUNG_WON,
@@ -164,11 +282,27 @@ const nurseScenario: IDialog[] = [
     next: [
       [
         {
+          type: EDialogType.DIALOG,
+          content: '...'
+        },
+        {
+          type: EDialogType.CHANGE_IMAGE,
+          content: '/images/background/2-2/30.png'
+        },
+        {
           type: EDialogType.SEONG_JANG,
           content: '아니야 이정도로 뭘.'
         }
       ],
       [
+        {
+          type: EDialogType.DIALOG,
+          content: '...'
+        },
+        {
+          type: EDialogType.CHANGE_IMAGE,
+          content: '/images/background/2-2/30.png'
+        },
         {
           type: EDialogType.SEONG_JANG,
           content: '도움이 되어서 다행이다.'
@@ -181,14 +315,26 @@ const nurseScenario: IDialog[] = [
 
 const mainDialog: IDialog[] = [
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/01.png'
+  },
+  {
     type: EDialogType.OTHER,
     content:
       '내일은 체육대회 날이에요. 운동 종목으로 농구, 축구, 달리기, 멀리뛰기가 있어요. 우리 반 대표로 나와서 하고 싶은 종목이 있나요?',
     name: '선생님'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/02.png'
+  },
+  {
     type: EDialogType.YOUNG_WON,
     content: '성장아 우리도 반 대표로 체육대회 참여할래?'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/2-2/03.png'
   },
   {
     type: EDialogType.SEONG_JANG,

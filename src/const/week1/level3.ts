@@ -2,16 +2,36 @@ import { IDialog, EDialogType } from '../../types/IDialogs'
 
 const dialogOptionsA1: IDialog[] = [
   {
+    type: EDialogType.DIALOG,
+    content: '...'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/SJ_Drawing.png'
+  },
+  {
     type: EDialogType.YOUNG_WON,
     content: '난 그림 그리는 걸 좋아해. 그 중에서 동물 그림 그리는 게 제일 재밌어.'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/YW_Dancing.png'
   },
   {
     type: EDialogType.YOUNG_WON,
     content: '내 취미도 알려 줄게. 나는 아이돌 춤 추는 걸 좋아해'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/SJ_EX.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
     content: '우와 멋지다. 다음에 춤 추는 거 보여주라.'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/SJ_YW_Promise.png'
   },
   {
     type: EDialogType.YOUNG_WON,
@@ -21,16 +41,36 @@ const dialogOptionsA1: IDialog[] = [
 
 const dialogOptionsA2: IDialog[] = [
   {
+    type: EDialogType.DIALOG,
+    content: '...'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/SJ_Soccer.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
     content: '난 운동을 좋아해. 그 중에서 축구를 가장 좋아해'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/YW_Dancing.png'
   },
   {
     type: EDialogType.YOUNG_WON,
     content: '내 취미도 알려 줄게. 나는 아이돌 춤 추는 걸 좋아해'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/SJ_EX.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
     content: '우와 멋지다. 다음에 춤 추는 거 보여주라.'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/SJ_YW_Promise.png'
   },
   {
     type: EDialogType.YOUNG_WON,
@@ -40,16 +80,36 @@ const dialogOptionsA2: IDialog[] = [
 
 const dialogOptionsA3: IDialog[] = [
   {
+    type: EDialogType.DIALOG,
+    content: '...'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/SJ_Movie.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
     content: '영화 보는 걸 좋아해. 그 중에서 로맨스 영화를 가장 좋아해.'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/YW_Dancing.png'
   },
   {
     type: EDialogType.YOUNG_WON,
     content: '내 취미도 알려 줄게. 나는 아이돌 춤 추는 걸 좋아해'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/SJ_EX.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
     content: '우와 멋지다. 다음에 춤 추는 거 보여주라.'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/SJ_YW_Promise.png'
   },
   {
     type: EDialogType.YOUNG_WON,
@@ -59,17 +119,33 @@ const dialogOptionsA3: IDialog[] = [
 
 const mainDialog: IDialog[] = [
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/CT_Hi.png'
+  },
+  {
     type: EDialogType.OTHER,
     content: '수업이 끝나고 집에 갈 시간이에요. 모두 내일 만나요.',
     name: '선생님'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/SJ_YW_GoTogether.png'
   },
   {
     type: EDialogType.YOUNG_WON,
     content: '성장아! 같이 하교하자. 집까지 얼마나 걸려?'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/SJ_ThisWay.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
     content: '정문에서 왼쪽으로 돌면 금방이야'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Edges/SJ_YW.png'
   },
   {
     type: EDialogType.YOUNG_WON,

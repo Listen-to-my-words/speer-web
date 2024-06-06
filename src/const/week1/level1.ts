@@ -2,8 +2,20 @@ import { IDialog, EDialogType } from '../../types/IDialogs'
 
 const talkWithSnack: IDialog[] = [
   {
+    type: EDialogType.DIALOG,
+    content: '...'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/YW_Hi.png'
+  },
+  {
     type: EDialogType.YOUNG_WON,
     content: '안녕 내 이름은 영원이야. 네 이름은 뭐야?'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: `/images/background/Classroom/SJ_Hi.png`
   },
   {
     type: EDialogType.SEONG_JANG,
@@ -21,20 +33,40 @@ const talkWithSnack: IDialog[] = [
 
 const wait: IDialog[] = [
   {
+    type: EDialogType.DIALOG,
+    content: '...'
+  },
+  {
     type: EDialogType.SEONG_JANG,
     content: '(긴장되니까 일단 말을 걸지 말아보자)'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/YW_Hi.png'
   },
   {
     type: EDialogType.YOUNG_WON,
     content: '안녕! 만나서 반가워. 나는 영원이라고 해. 너는 이름이 뭐야?'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/SJ_Hi.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
     content: '안녕 나는 성장이야'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/YW_Default.png'
+  },
+  {
     type: EDialogType.YOUNG_WON,
     content: '내 옆자리 앉아줘서 고마워'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/SJ_Default.png'
   },
   {
     type: EDialogType.SEONG_JANG,
@@ -44,8 +76,12 @@ const wait: IDialog[] = [
 
 const mainDialog: IDialog[] = [
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/SJ_Default.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
-    content: '(어디에 앉지? 어, 저기 자리가 비워져있네 옆자리 앉아야겠다)'
+    content: '(어디에 앉지? 어, 저기 자리가 비어있네 옆자리 앉아야겠다)'
   },
   {
     type: EDialogType.SELECTION,

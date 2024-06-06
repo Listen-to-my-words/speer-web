@@ -3,28 +3,72 @@ import { IDialog, EDialogType } from '../../types/IDialogs'
 const seatOptions: Array<IDialog[]> = [
   [
     {
+      type: EDialogType.DIALOG,
+      content: '...'
+    },
+    {
+      type: EDialogType.CHANGE_IMAGE,
+      content: '/images/background/Classroom/SJ_Front.png'
+    },
+    {
       type: EDialogType.SEONG_JANG,
       content: '앞자리였다.'
+    },
+    {
+      type: EDialogType.CHANGE_IMAGE,
+      content: '/images/background/Classroom/Classroom.png'
     }
   ],
   [
+    {
+      type: EDialogType.DIALOG,
+      content: '...'
+    },
+    {
+      type: EDialogType.CHANGE_IMAGE,
+      content: '/images/background/Classroom/SJ_Middle.png'
+    },
     {
       type: EDialogType.SEONG_JANG,
       content: '중간자리였다.'
+    },
+    {
+      type: EDialogType.CHANGE_IMAGE,
+      content: '/images/background/Classroom/Classroom.png'
     }
   ],
   [
     {
+      type: EDialogType.DIALOG,
+      content: '...'
+    },
+    {
+      type: EDialogType.CHANGE_IMAGE,
+      content: '/images/background/Classroom/SJ_Back.png'
+    },
+    {
       type: EDialogType.SEONG_JANG,
       content: '뒤쪽 창가자리였다.'
+    },
+    {
+      type: EDialogType.CHANGE_IMAGE,
+      content: '/images/background/Classroom/Classroom.png'
     }
   ]
 ]
 
 const conversationWithNewSeatmate: IDialog[] = [
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/JJ_SJ.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
     content: '저기…'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/JJ_SJ.png'
   },
   {
     type: EDialogType.OTHER,
@@ -34,6 +78,10 @@ const conversationWithNewSeatmate: IDialog[] = [
   {
     type: EDialogType.SEONG_JANG,
     content: '내 이름은 김성장이야. 잘부탁해!'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/JJ_SJ_YW.png'
   },
   {
     type: EDialogType.YOUNG_WON,
@@ -48,6 +96,10 @@ const conversationWithNewSeatmate: IDialog[] = [
     content: '나는 네 뒷자리야! 잘부탁해!'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/SJ_YW.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
     content: '기쁘다! 잘부탁해~'
   }
@@ -55,16 +107,29 @@ const conversationWithNewSeatmate: IDialog[] = [
 
 const borrowingSupplies: IDialog[] = [
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/SJ_ExMark.png'
+  },
+  {
     type: EDialogType.SEONG_JANG,
     content: '(헉.. 오늘 필통을 안가져왔잖아? 어떻게 이런 실수를!)'
+  },
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/JJ_SJ_TT.png'
   },
   {
     type: EDialogType.SEONG_JANG,
     content: '저기 혹시.. 내가 오늘 필통을 두고 와서 그러는데 연필과 지우개를 빌릴 수 있을까?'
   },
   {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/JJ_Er.png'
+  },
+  {
     type: EDialogType.OTHER,
-    content: '응 그래 여기.'
+    content: '응 그래 여기.',
+    name: '짝꿍'
   },
   {
     type: EDialogType.SEONG_JANG,
@@ -73,6 +138,10 @@ const borrowingSupplies: IDialog[] = [
 ]
 
 const mainDialog: IDialog[] = [
+  {
+    type: EDialogType.CHANGE_IMAGE,
+    content: '/images/background/Classroom/CT_Default.png'
+  },
   {
     type: EDialogType.OTHER,
     content:
@@ -88,8 +157,19 @@ const mainDialog: IDialog[] = [
   },
   {
     type: EDialogType.SEONG_JANG,
-    content:
-      '내가 원하는 자리로 갈 수 있어서 기쁘다! 옆 짝꿍이 정해진 듯하다. (터벅터벅) 자리로 이동하는 중.. (자리에 도착해보니 이미 짝꿍이 앉아있었다.)'
+    content: '내가 원하는 자리로 갈 수 있어서 기쁘다!'
+  },
+  {
+    type: EDialogType.SEONG_JANG,
+    content: '옆 짝꿍이 정해진 듯하다. '
+  },
+  {
+    type: EDialogType.SEONG_JANG,
+    content: '(터벅터벅) 자리로 이동하는 중.. '
+  },
+  {
+    type: EDialogType.SEONG_JANG,
+    content: '(자리에 도착해보니 이미 짝꿍이 앉아있었다.)'
   },
   ...conversationWithNewSeatmate,
   {
