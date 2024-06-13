@@ -34,7 +34,7 @@ export const arrowStyle: SxProps = {
   position: 'absolute',
   color: 'lightgrey',
   right: '1rem',
-  bottom: '1rem'
+  bottom: [0, '1rem']
 }
 
 export const dialogTextStyle: SxProps = {
