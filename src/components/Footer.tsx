@@ -18,7 +18,9 @@ const Footer = () => {
       }}
     >
       <Typography variant={'Subtitle2'} sx={{ color: '#ffffff' }}>
-        {'서울여자대학교 바롬 2팀 내 말을 들어조'}
+        <a href={'https://github.com/Listen-to-my-words/speer-web'} style={{ color: 'white', textDecoration: 'none' }}>
+          {'서울여자대학교 바롬 2팀 내 말을 들어조'}
+        </a>
       </Typography>
     </Stack>
   )
