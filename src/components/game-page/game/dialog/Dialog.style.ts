@@ -3,8 +3,8 @@ import { SxProps } from '@mui/system'
 export const dialogBoxSizeStyle: SxProps = {
   width: '100%',
   maxWidth: '53.25rem',
-  height: ['45rem', 'calc((100vw - 3rem) / 9 * 4)'],
-  maxHeight: '23rem',
+  height: ['23rem', 'calc((100vw - 3rem) / 5 * 4)'],
+  maxHeight: ['23rem', '42.6rem'],
   borderRadius: '0.75rem'
 }
 

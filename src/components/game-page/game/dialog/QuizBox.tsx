@@ -76,17 +76,18 @@ const QuizBox = ({ quiz, setQuiz }: { quiz: IQuiz[]; setQuiz: React.Dispatch<Rea
             spacing={2}
           >
             <Typography
-              variant={'Title2Emphasis'}
+              variant={'Title3Emphasis'}
               sx={{
                 zIndex: 350,
-                height: '50%',
+                // height: '50%',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
-                flexGrow: 1
+                justifyContent: 'center'
+                // flexGrow: 1
               }}
               align={'center'}
               fontFamily={'SOYOMapleBoldTTF'}
+              color={'#A07248'}
             >
               성장 퀴즈
             </Typography>
@@ -116,8 +117,14 @@ const QuizBox = ({ quiz, setQuiz }: { quiz: IQuiz[]; setQuiz: React.Dispatch<Rea
                 }}
                 align={'center'}
                 fontFamily={'SOYOMapleBoldTTF'}
+                color={display === 0 ? 'black' : '#FFDCDC'}
+                mb={'0.5rem'}
               >
-                {display === 0 ? quiz[0].question : userSelection === quiz[0].answer ? '정답입니다!' : '오답입니다!'}
+                {display === 0
+                  ? quiz[0].question
+                  : userSelection === quiz[0].answer
+                    ? '정답입니다!'
+                    : '오답입니다!\n다시 시도해보세요!'}
               </Typography>
             </Stack>
             <Grid
