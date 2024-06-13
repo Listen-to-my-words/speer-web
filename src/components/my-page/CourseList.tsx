@@ -10,12 +10,17 @@ const SubCourseInfo = ({ subLevel, progress }: { subLevel: ISubLevel; progress: 
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.up('sm'))
   return (
-    <>
+    <Grid container sx={{ width: '100%', boxSizing: 'border-box' }}>
       <Grid xs={6} sm={4}>
-        <Typography variant={'Subtitle2'}>{`${subLevel.title}`}</Typography>
+        <Typography
+          variant={'Subtitle2'}
+          sx={{
+            width: 'fit-content'
+          }}
+        >{`${subLevel.title}`}</Typography>
       </Grid>
       <Grid container xs={6} sm={8}>
-        <Grid xs={10} sm={8}>
+        <Grid xs={5} sm={8}>
           {matches ? (
             <BorderLinearProgress
               value={progress}
@@ -34,7 +39,7 @@ const SubCourseInfo = ({ subLevel, progress }: { subLevel: ISubLevel; progress: 
                   borderStyle: 'dotted',
                   borderColor: 'lightgray',
                   display: 'inline-block',
-                  width: '60%'
+                  width: '50%'
                 }}
               />
             </Stack>
@@ -42,11 +47,11 @@ const SubCourseInfo = ({ subLevel, progress }: { subLevel: ISubLevel; progress: 
         </Grid>
         <Grid xs={2} sm={4}>
           <Typography variant={'Body1'} sx={{ width: '100%' }} textAlign={'right'}>
-            {`${progress}%`}
+            {`${progress.toFixed(2)}%`}
           </Typography>
         </Grid>
       </Grid>
-    </>
+    </Grid>
   )
 }
 
@@ -54,11 +59,11 @@ const CourseInfo = ({ level, progress }: { level: ILevel; progress: [number, num
   return (
     <Stack spacing={[1, 4]} width={1} pt={0.5} pb={[0, 3.5]} direction={'column'} justifyContent={'space-between'}>
       <Typography variant={'Subtitle1Emphasis'}>{`< ${level.week}주차 > - ${level.title}`}</Typography>
-      {level.subLevels.map((subLevel, index) => (
-        <Grid container sx={{ width: '100%' }} key={subLevel.title + index}>
-          <SubCourseInfo subLevel={subLevel} progress={progress[index]} />
-        </Grid>
-      ))}
+      <>
+        {level.subLevels.map((subLevel, index) => (
+          <SubCourseInfo subLevel={subLevel} progress={progress[index]} key={subLevel.title + index} />
+        ))}
+      </>
     </Stack>
   )
 }
