@@ -16,6 +16,18 @@ export const dialogBoxStyle: SxProps = {
   overflow: 'hidden'
 }
 
+export const dialogBackgroundStyle: SxProps = {
+  ...dialogBoxSizeStyle,
+  objectFit: 'cover',
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  width: '100%',
+  height: '100%'
+}
+
 export const dialogStyle: SxProps = {
   backgroundColor: 'white',
   width: '100%',
@@ -34,7 +46,7 @@ export const arrowStyle: SxProps = {
   position: 'absolute',
   color: 'lightgrey',
   right: '1rem',
-  bottom: [0, '1rem']
+  bottom: ['0', '1rem']
 }
 
 export const dialogTextStyle: SxProps = {
