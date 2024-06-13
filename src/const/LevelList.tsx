@@ -31,11 +31,11 @@ const levelList: [ILevel, ILevel] = [
       },
       {
         level: 2,
-        title: '체육대회 준비하기'
+        title: '체육대회'
       },
       {
         level: 3,
-        title: '체육대회 참가하기'
+        title: '반장이 되어보자'
       }
     ]
   }
