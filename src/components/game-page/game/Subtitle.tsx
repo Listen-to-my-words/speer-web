@@ -10,7 +10,7 @@ const Subtitle = ({ week, currLevel, isQuiz }: { week: number; currLevel?: numbe
 
   const handleNavBeforeClick = (week: number, subLevel: number) => {
     const beforeLevel = subLevel === 1 ? 'quiz' : subLevel - 1
-    const beforeWeek = beforeLevel === 3 ? week - 1 : week
+    const beforeWeek = beforeLevel === 'quiz' ? week - 1 : week
     if (isQuiz) {
       return () => navigator(`/game/${beforeWeek}/3`)
     }
@@ -53,11 +53,11 @@ const Subtitle = ({ week, currLevel, isQuiz }: { week: number; currLevel?: numbe
           {isQuiz ? `${week}주차 퀴즈` : levelList[week - 1].subLevels[currLevel - 1].title}
         </Typography>
       </Stack>
-      <IconButton onClick={handleNavNextClick(week, currLevel)} disabled={week === 4 && currLevel === 3}>
+      <IconButton onClick={handleNavNextClick(week, currLevel)} disabled={week === 2 && isQuiz}>
         <KeyboardArrowRightIcon
           sx={{
             fontSize: '3rem',
-            color: week === 4 && currLevel === 3 ? 'lightgray' : 'primary.main'
+            color: week === 2 && isQuiz ? 'lightgray' : 'primary.main'
           }}
         />
       </IconButton>
