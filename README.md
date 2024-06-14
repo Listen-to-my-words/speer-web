@@ -19,7 +19,7 @@
 ### 팀 내말을들어조
 
 서울여자대학교 24년 봄 바롬종합설계프로젝트 21분반 '내 말을 들어조'.<br/>
-1명의 개발자와 1명의 디자이너, + 나머지 세 명 소개
+1명의 개발자와 1명의 디자이너, 그리고 세 명의 기획자로 이루어져 있습니다.
 
 ## 프로젝트 소개
 
@@ -46,6 +46,13 @@ $ git clone git@github.com:Listen-to-my-words/speer-web.git
 $ cd speer-web
 $ npm install
 $ npm run start
+```
+
+### 빌드 및 배포 방법
+
+```shell
+$ npm run build
+$ firebase deploy
 ```
 
 ### 기술 스택
