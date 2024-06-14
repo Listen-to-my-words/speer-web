@@ -93,3 +93,5 @@ $ firebase deploy
 4. **타당도 검증**. 프로젝트 시작 전, 최대한 팀에서 대상자를 관리할 것을 명시 및 기관 섭외하여 난이도의 타당도를 검증할 것.
 
 ### 척도 검사지 자료
+
+[https://docs.google.com/document/d/1XqjYVqAWcce5YyG6TeIxrxMexTUd1DBFCxpHmqxd4Fs/edit?usp=sharing](https://docs.google.com/document/d/1XqjYVqAWcce5YyG6TeIxrxMexTUd1DBFCxpHmqxd4Fs/edit?usp=sharing)
